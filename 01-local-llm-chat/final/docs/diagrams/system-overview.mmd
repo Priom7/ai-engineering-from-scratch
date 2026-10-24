@@ -1,0 +1,11 @@
+flowchart LR
+    A["React Frontend"] --> B["Node + TypeScript Backend"]
+    B --> C["Ollama Local API"]
+    C --> D["Local Model"]
+
+    A --> A1["UI State"]
+    B --> B1["Express Routes"]
+    B --> B2["Ollama Fetch Helper"]
+    C --> C1["GET /api/tags"]
+    C --> C2["POST /api/chat"]
+

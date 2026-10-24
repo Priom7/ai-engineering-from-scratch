@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Backend
+    participant Ollama
+
+    User->>Frontend: Types a message
+    Frontend->>Backend: POST /api/chat
+    Backend->>Ollama: POST /api/chat
+    Ollama-->>Backend: Assistant response
+    Backend-->>Frontend: Simplified JSON response
+    Frontend-->>User: Renders assistant reply
+

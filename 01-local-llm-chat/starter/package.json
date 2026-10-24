@@ -1,0 +1,19 @@
+{
+  "name": "ollama-chat-001",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c cyan,magenta \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "build": "npm run build --workspace backend && npm run build --workspace frontend",
+    "start": "npm run start --workspace backend",
+    "check": "npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
+
