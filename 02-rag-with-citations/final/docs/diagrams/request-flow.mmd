@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Backend
+    participant Ollama
+
+    User->>Frontend: Upload document
+    Frontend->>Backend: POST upload
+    Backend->>Backend: Clean and chunk text
+    Backend->>Ollama: Embed chunks
+    Ollama-->>Backend: Vectors
+    Backend-->>Frontend: Upload complete
+
+    User->>Frontend: Ask question
+    Frontend->>Backend: POST query
+    Backend->>Ollama: Embed question
+    Ollama-->>Backend: Query vector
+    Backend->>Backend: Rank similar chunks
+    Backend->>Ollama: Ask chat model with retrieved context
+    Ollama-->>Backend: Grounded answer
+    Backend-->>Frontend: Answer + citations
+

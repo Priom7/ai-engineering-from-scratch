@@ -1,0 +1,11 @@
+flowchart LR
+    A["React Frontend"] --> B["Node Backend"]
+    B --> C["Ingestion Worker"]
+    C --> D["Chunking and Embeddings"]
+    D --> E["Vector Store"]
+    B --> E
+    B --> F["Ollama LLM"]
+    E --> B
+    F --> B
+    B --> G["Answer with Citations"]
+

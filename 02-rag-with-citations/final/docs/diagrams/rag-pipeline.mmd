@@ -1,0 +1,12 @@
+flowchart LR
+    A["Uploaded Document"] --> B["Text Cleaning"]
+    B --> C["Chunking"]
+    C --> D["Embeddings via Ollama"]
+    D --> E["Local JSON Vector Store"]
+    F["User Question"] --> G["Question Embedding"]
+    G --> H["Similarity Search"]
+    E --> H
+    H --> I["Top Context Chunks"]
+    I --> J["Chat Model via Ollama"]
+    J --> K["Answer with Citations"]
+
