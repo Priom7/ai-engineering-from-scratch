@@ -1,0 +1,217 @@
+{
+  "config": "chunk-800",
+  "createdAt": "2026-10-26T21:41:19.115Z",
+  "settings": {
+    "chunkSize": 800,
+    "chunkOverlap": 120,
+    "topK": 4,
+    "chatModel": "llama3.2:3b",
+    "systemPrompt": "You are a retrieval assistant. Answer only from the provided context. If the answer is not in the context, say that clearly. Keep the answer concise and practical.",
+    "repeats": 0,
+    "judgeModel": "qwen2.5:7b-instruct"
+  },
+  "environment": {
+    "ollamaVersion": "0.40.9",
+    "models": {
+      "nomic-embed-text:latest": "0a109f422b47"
+    }
+  },
+  "attempts": [],
+  "hits": {
+    "refund-two-months": true,
+    "monthly-cancel": true,
+    "downgrade-credit": true,
+    "refund-speed": true,
+    "uptime-credit": true,
+    "sev1-escalation": true,
+    "export-time": true,
+    "team-price": true,
+    "annual-saving": true,
+    "charity-discount": true,
+    "free-trial": true,
+    "sso-team": true,
+    "audit-log-business": true,
+    "region-change": true,
+    "web-upload-limit": true,
+    "version-history-team": true,
+    "camera-mobile-data": true,
+    "passcode-wrong": true
+  },
+  "summary": {
+    "retrievalHitRate": 1,
+    "answerPassRate": null,
+    "honestyPassRate": null,
+    "overallPassRate": null,
+    "medianSeconds": null,
+    "questions": [
+      {
+        "id": "refund-two-months",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "monthly-cancel",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "downgrade-credit",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "refund-speed",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "uptime-credit",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "sev1-escalation",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "export-time",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "team-price",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "annual-saving",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "charity-discount",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "free-trial",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "sso-team",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "audit-log-business",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "region-change",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "web-upload-limit",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "version-history-team",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "camera-mobile-data",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "passcode-wrong",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "student-discount",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "office-address",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "crypto-payment",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "slack-integration",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "ceo-name",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 0,
+        "attempts": 0
+      },
+      {
+        "id": "hipaa",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 0,
+        "attempts": 0
+      }
+    ]
+  }
+}

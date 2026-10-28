@@ -1,0 +1,200 @@
+{
+  "config": "baseline",
+  "createdAt": "2026-10-26T22:54:25.789Z",
+  "settings": {
+    "chunkSize": 500,
+    "chunkOverlap": 80,
+    "topK": 4,
+    "chatModel": "llama3.2:3b",
+    "systemPrompt": "You are a retrieval assistant. Answer only from the provided context. If the answer is not in the context, say that clearly. Keep the answer concise and practical.",
+    "repeats": 10,
+    "judgeModel": "qwen2.5:7b-instruct"
+  },
+  "environment": {
+    "ollamaVersion": "0.40.9",
+    "models": {
+      "llama3.2:3b": "a80c4f17acd5",
+      "qwen2.5:7b-instruct": "845dbda0ea48",
+      "nomic-embed-text:latest": "0a109f422b47"
+    }
+  },
+  "attempts": [
+    {
+      "questionId": "student-discount",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "No specific student discount is mentioned in the context. However, registered charities are offered 30% off the Team and Business plans, but there is no indication that students are eligible for a discount.",
+      "durationMs": 3409,
+      "passed": true,
+      "reason": "The answer correctly states that no specific student discount is mentioned and notes the availability of a discount for registered charities, aligning with the rubric.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, Fernhill offers a 30% student discount on the Team and Business plans.",
+      "durationMs": 709,
+      "passed": false,
+      "reason": "The answer claims a student discount, which is not mentioned in the provided context.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, registered charities receive a 30% discount on the Team and Business plans. To apply, go to the Billing page and enter your charity registration number.",
+      "durationMs": 1232,
+      "passed": false,
+      "reason": "The answer claims a yes or no, which the documents do not explicitly state.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 4,
+      "seed": 4,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "According to the context, yes, Fernhill Cloud offers a 30% student discount on the Team and Business plans, which can be applied from the Billing page with a charity registration number.",
+      "durationMs": 1456,
+      "passed": false,
+      "reason": "The answer incorrectly states that a 30% student discount is available, when the context only mentions a 30% discount for registered charities.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 5,
+      "seed": 5,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, registered charities can get 30% off the Team and Business plans.",
+      "durationMs": 649,
+      "passed": false,
+      "reason": "The answer claims a yes or no, which the documents do not explicitly state.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 6,
+      "seed": 6,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "No, Fernhill offers a 30% discount for registered charities on the Team and Business plans, but there is no general student discount mentioned in the provided context.",
+      "durationMs": 1263,
+      "passed": true,
+      "reason": "The answer correctly states that no general student discount is mentioned, aligning with the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 7,
+      "seed": 7,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, Fernhill offers a 30% discount for registered charities on the Team and Business plans.",
+      "durationMs": 786,
+      "passed": false,
+      "reason": "The answer claims a yes or no, which the documents do not explicitly state.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 8,
+      "seed": 8,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, registered charities receive a 30% discount on the Team and Business plans.",
+      "durationMs": 667,
+      "passed": false,
+      "reason": "The answer claims a yes or no, which the documents do not explicitly state.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 9,
+      "seed": 9,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, registered charities can get 30% off the Team and Business plans.",
+      "durationMs": 632,
+      "passed": false,
+      "reason": "The answer claims a yes or no, which the documents do not explicitly state.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 10,
+      "seed": 10,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, registered charities receive a 30% discount on the Team and Business plans, as stated in Source 1 and Source 3.",
+      "durationMs": 1094,
+      "passed": false,
+      "reason": "The answer claims a yes or no, which the documents do not explicitly state for students.",
+      "error": null
+    }
+  ],
+  "hits": {},
+  "summary": {
+    "retrievalHitRate": 0,
+    "answerPassRate": null,
+    "honestyPassRate": 0.2,
+    "overallPassRate": 0.2,
+    "medianSeconds": 0.94,
+    "questions": [
+      {
+        "id": "student-discount",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 2,
+        "attempts": 10
+      }
+    ]
+  }
+}

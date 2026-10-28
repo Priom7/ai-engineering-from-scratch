@@ -1,0 +1,23 @@
+{
+  "name": "rag-evals-003",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "backend",
+    "frontend",
+    "evals"
+  ],
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c cyan,magenta \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "build": "npm run build --workspace backend && npm run build --workspace frontend",
+    "start": "npm run start --workspace backend",
+    "test": "npm test --workspace backend && npm test --workspace evals",
+    "eval": "npm run eval --workspace evals --",
+    "eval:compare": "npm run eval:compare --workspace evals --",
+    "eval:check": "npm run eval:check --workspace evals --",
+    "eval:judge-check": "npm run eval:judge-check --workspace evals --"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}

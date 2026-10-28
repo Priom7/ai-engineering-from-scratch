@@ -1,0 +1,35 @@
+{
+  "baseline": {
+    "chunkSize": 500,
+    "chunkOverlap": 80,
+    "topK": 4,
+    "chatModel": "llama3.2:3b",
+    "systemPrompt": "default"
+  },
+  "prompt-b": {
+    "systemPrompt": "You answer questions about Fernhill Cloud using only the context. If the context does not contain the answer, reply exactly: I couldn't find that in the documents. Otherwise answer in one or two sentences and name the source document."
+  },
+  "model-7b": {
+    "chatModel": "qwen2.5:7b-instruct"
+  },
+  "chunk-300": {
+    "chunkSize": 300,
+    "chunkOverlap": 50
+  },
+  "chunk-800": {
+    "chunkSize": 800,
+    "chunkOverlap": 120
+  },
+  "topk-2": {
+    "topK": 2
+  },
+  "topk-1": {
+    "topK": 1
+  },
+  "docs-episode-2": {
+    "documents": [
+      "fernhill-refund-policy.md",
+      "fernhill-support-handbook.md"
+    ]
+  }
+}

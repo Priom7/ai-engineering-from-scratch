@@ -1,0 +1,303 @@
+{
+  "questions": [
+    {
+      "id": "refund-two-months",
+      "question": "I bought a Fernhill Cloud annual plan two months ago. Can I get a refund?",
+      "source": "fernhill-refund-policy.md",
+      "evidence": [
+        "After 30 days, we refund the unused months"
+      ],
+      "grade": {
+        "type": "judge",
+        "reference": "Yes, a partial refund: the unused months, minus a 15% early-cancellation fee.",
+        "rubric": "Pass if the answer says that, two months after purchase, the customer gets the unused months back minus a 15% early-cancellation fee. Mentioning that a full refund is only possible within 30 days is fine. Fail if it says no refund is possible, or that a full refund is still available."
+      }
+    },
+    {
+      "id": "monthly-cancel",
+      "question": "If I cancel my monthly plan, do I get this month refunded?",
+      "source": "fernhill-refund-policy.md",
+      "evidence": [
+        "We do not refund the current month"
+      ],
+      "grade": {
+        "type": "judge",
+        "reference": "No. The current month isn't refunded, but you keep full access until the end of the billing period.",
+        "rubric": "Pass only if the answer says the current month is not refunded. Saying that access continues until the end of the billing period is a plus, not a requirement. Fail if it says the month is refunded."
+      }
+    },
+    {
+      "id": "downgrade-credit",
+      "question": "I'm moving from the Team plan to Starter halfway through my annual plan. Will I get money back on my card?",
+      "source": "fernhill-refund-policy.md",
+      "evidence": [
+        "added to your account as credit"
+      ],
+      "grade": {
+        "type": "judge",
+        "reference": "No. The difference is added to your account as credit. It is not refunded to your card.",
+        "rubric": "Pass only if the answer says the difference becomes account credit and is not refunded to the card. Fail if it says the money goes back to the card."
+      }
+    },
+    {
+      "id": "refund-speed",
+      "question": "How long does a refund take to reach my card?",
+      "source": "fernhill-refund-policy.md",
+      "evidence": [
+        "within 5 to 10 business days"
+      ],
+      "grade": {
+        "type": "facts",
+        "mustSay": [
+          "5 to 10 business days|5-10 business days"
+        ]
+      }
+    },
+    {
+      "id": "uptime-credit",
+      "question": "Uptime was 98.7% last month. How much service credit can I claim?",
+      "source": "fernhill-refund-policy.md",
+      "evidence": [
+        "the credit is 25%"
+      ],
+      "grade": {
+        "type": "facts",
+        "mustSay": [
+          "25%|25 percent"
+        ]
+      }
+    },
+    {
+      "id": "sev1-escalation",
+      "question": "We're completely down and nobody has replied to our Severity 1 ticket. When does an engineer get paged?",
+      "source": "fernhill-support-handbook.md",
+      "evidence": [
+        "no response within 30 minutes"
+      ],
+      "grade": {
+        "type": "facts",
+        "mustSay": [
+          "30 minutes|thirty minutes"
+        ]
+      }
+    },
+    {
+      "id": "export-time",
+      "question": "How long does it take for an account data export to be ready?",
+      "source": "fernhill-support-handbook.md",
+      "evidence": [
+        "Exports are ready within 24 hours"
+      ],
+      "grade": {
+        "type": "facts",
+        "mustSay": [
+          "24 hours|twenty-four hours"
+        ]
+      }
+    },
+    {
+      "id": "team-price",
+      "question": "How much does the Team plan cost per user?",
+      "source": "fernhill-pricing.md",
+      "evidence": [
+        "Team costs £12 per user per month"
+      ],
+      "grade": {
+        "type": "facts",
+        "mustSay": [
+          "12"
+        ]
+      }
+    },
+    {
+      "id": "annual-saving",
+      "question": "How much do I save if I pay yearly instead of monthly?",
+      "source": "fernhill-pricing.md",
+      "evidence": [
+        "you get two months free"
+      ],
+      "grade": {
+        "type": "facts",
+        "mustSay": [
+          "two months|2 months"
+        ]
+      }
+    },
+    {
+      "id": "charity-discount",
+      "question": "We're a registered charity. Do we get a discount?",
+      "source": "fernhill-pricing.md",
+      "evidence": [
+        "Registered charities get 30% off"
+      ],
+      "grade": {
+        "type": "facts",
+        "mustSay": [
+          "30%|30 percent"
+        ]
+      }
+    },
+    {
+      "id": "free-trial",
+      "question": "Is there a free trial, and how long is it?",
+      "source": "fernhill-pricing.md",
+      "evidence": [
+        "14-day free trial"
+      ],
+      "grade": {
+        "type": "facts",
+        "mustSay": [
+          "14 day|14 days|fourteen days"
+        ]
+      }
+    },
+    {
+      "id": "sso-team",
+      "question": "Can we use single sign-on on the Team plan?",
+      "source": "fernhill-account-security.md",
+      "evidence": [
+        "available on the Business plan only"
+      ],
+      "grade": {
+        "type": "judge",
+        "reference": "No. Single sign-on is only available on the Business plan.",
+        "rubric": "Pass only if the answer says single sign-on is not available on the Team plan, or that it is only on the Business plan. Fail if it says the Team plan can use it."
+      }
+    },
+    {
+      "id": "audit-log-business",
+      "question": "How long does the Business plan keep the audit log?",
+      "source": "fernhill-account-security.md",
+      "evidence": [
+        "shares and deletions for one year"
+      ],
+      "grade": {
+        "type": "facts",
+        "mustSay": [
+          "one year|1 year|12 months"
+        ]
+      }
+    },
+    {
+      "id": "region-change",
+      "question": "We picked the EU region when we signed up. Can we move our files to the US later?",
+      "source": "fernhill-account-security.md",
+      "evidence": [
+        "The region cannot be changed later"
+      ],
+      "grade": {
+        "type": "judge",
+        "reference": "No. The region is chosen when the team is created and cannot be changed later.",
+        "rubric": "Pass only if the answer says the region can't be changed after the team is created. Fail if it says the files can be moved."
+      }
+    },
+    {
+      "id": "web-upload-limit",
+      "question": "What's the biggest file I can upload through the web?",
+      "source": "fernhill-sync-and-storage.md",
+      "evidence": [
+        "up to 5 GB through the web"
+      ],
+      "grade": {
+        "type": "facts",
+        "mustSay": [
+          "5 GB|5GB|5 gigabytes"
+        ]
+      }
+    },
+    {
+      "id": "version-history-team",
+      "question": "How far back can I restore an earlier version of a file on the Team plan?",
+      "source": "fernhill-sync-and-storage.md",
+      "evidence": [
+        "180 days on Team and Business"
+      ],
+      "grade": {
+        "type": "facts",
+        "mustSay": [
+          "180 days"
+        ]
+      }
+    },
+    {
+      "id": "camera-mobile-data",
+      "question": "Will camera upload use my mobile data?",
+      "source": "fernhill-mobile-apps.md",
+      "evidence": [
+        "By default it only runs on Wi-Fi"
+      ],
+      "grade": {
+        "type": "judge",
+        "reference": "Not unless you allow it: camera upload only runs on Wi-Fi by default, and mobile data can be turned on in Settings.",
+        "rubric": "Pass if the answer makes clear that camera upload doesn't use mobile data unless you allow it in Settings. Fail if it says camera upload uses mobile data by default."
+      }
+    },
+    {
+      "id": "passcode-wrong",
+      "question": "What happens if someone enters the wrong passcode too many times?",
+      "source": "fernhill-mobile-apps.md",
+      "evidence": [
+        "After 10 wrong passcode attempts"
+      ],
+      "grade": {
+        "type": "judge",
+        "reference": "After 10 wrong attempts, the app signs out and removes offline files from the device.",
+        "rubric": "Pass only if the answer says the app signs out after 10 wrong attempts. Saying offline files are removed is a plus. Fail if it gives a different number or a different consequence."
+      }
+    },
+    {
+      "id": "student-discount",
+      "question": "Do you offer a student discount?",
+      "source": null,
+      "evidence": [],
+      "grade": {
+        "type": "refuse"
+      }
+    },
+    {
+      "id": "office-address",
+      "question": "What's the address of Fernhill's office?",
+      "source": null,
+      "evidence": [],
+      "grade": {
+        "type": "refuse"
+      }
+    },
+    {
+      "id": "crypto-payment",
+      "question": "Can I pay for my subscription with Bitcoin?",
+      "source": null,
+      "evidence": [],
+      "grade": {
+        "type": "refuse"
+      }
+    },
+    {
+      "id": "slack-integration",
+      "question": "Does Fernhill integrate with Slack?",
+      "source": null,
+      "evidence": [],
+      "grade": {
+        "type": "refuse"
+      }
+    },
+    {
+      "id": "ceo-name",
+      "question": "Who is the CEO of Fernhill Cloud?",
+      "source": null,
+      "evidence": [],
+      "grade": {
+        "type": "refuse"
+      }
+    },
+    {
+      "id": "hipaa",
+      "question": "Is Fernhill Cloud HIPAA compliant?",
+      "source": null,
+      "evidence": [],
+      "grade": {
+        "type": "refuse"
+      }
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "questionId": "refund-two-months",
+    "answer": "Since you purchased an annual plan two months ago, you can request a refund. However, according to the refund policy, you can only get a full refund within 30 days of purchase. Since that time has passed, you will receive a refund for the unused months minus a 15% early-cancellation fee.",
+    "pass": true,
+    "note": "baseline run: unused months minus the 15% fee"
+  },
+  {
+    "questionId": "refund-two-months",
+    "answer": "Based on the provided context, since you bought the annual plan two months ago, you are within the 30-day refund period. You can request a refund by emailing billing@fernhill.example with your account email and invoice number, or using the Request refund button on the Billing page. Refunds are processed within 5 to 10 business days.",
+    "pass": false,
+    "note": "baseline run: says it is still within the 30-day window"
+  },
+  {
+    "questionId": "refund-two-months",
+    "answer": "Based on the provided context, you can request a refund for your Fernhill Cloud annual plan within 30 days of purchase. If you do not request a refund within this time frame, you will receive a 15% early-cancellation fee.",
+    "pass": false,
+    "note": "baseline run: says a fee applies, never says the unused months are refunded"
+  },
+  {
+    "questionId": "sso-team",
+    "answer": "No, Single sign-on is available on the Business plan only.",
+    "pass": true,
+    "note": "baseline run: Business only"
+  },
+  {
+    "questionId": "sso-team",
+    "answer": "No, single sign-on is not available on the Team plan. It is available on the Business plan, along with other features.",
+    "pass": true,
+    "note": "baseline run"
+  },
+  {
+    "questionId": "downgrade-credit",
+    "answer": "No, you will not get money back on your card. According to the policy, downgrades from the Team plan to the Starter plan do not result in a refund, but the difference is added to your account as credit.",
+    "pass": true,
+    "note": "baseline run"
+  },
+  {
+    "questionId": "camera-mobile-data",
+    "answer": "Camera upload may use mobile data if you allow it in the app's settings, as stated in Source 1.",
+    "pass": true,
+    "note": "baseline run: only if you allow it"
+  },
+  {
+    "questionId": "student-discount",
+    "answer": "No specific student discount is mentioned in the context. However, registered charities are offered 30% off the Team and Business plans, but there is no indication that students are eligible for a discount.",
+    "pass": true,
+    "note": "baseline run: says it is not mentioned; the charity discount is a real fact"
+  },
+  {
+    "questionId": "student-discount",
+    "answer": "Yes, Fernhill offers a 30% student discount on the Team and Business plans.",
+    "pass": false,
+    "note": "baseline run: invents a 30% student discount"
+  },
+  {
+    "questionId": "student-discount",
+    "answer": "Yes, registered charities receive a 30% discount on the Team and Business plans. To apply, go to the Billing page and enter your charity registration number.",
+    "pass": false,
+    "note": "baseline run: answers yes with the charity discount"
+  },
+  {
+    "questionId": "office-address",
+    "answer": "There is no address mentioned in the provided context.",
+    "pass": true,
+    "note": "baseline run"
+  },
+  {
+    "questionId": "office-address",
+    "answer": "The provided context only mentions the support hours, account security, sync and storage options, and mobile apps of Fernhill Cloud. It does not mention the address of Fernhill's office.",
+    "pass": true,
+    "note": "baseline run"
+  },
+  {
+    "questionId": "slack-integration",
+    "answer": "According to Source 4: fernhill-account-security.md, Fernhill Cloud has single sign-on with Google Workspace, Microsoft Entra ID, or Okta available on the Business plan. There is no mention of integration with Slack.",
+    "pass": true,
+    "note": "baseline run: SSO providers are real facts; says Slack is not mentioned"
+  },
+  {
+    "questionId": "slack-integration",
+    "answer": "No explicit mention of integration with Slack is found in the provided context.",
+    "pass": true,
+    "note": "baseline run"
+  },
+  {
+    "questionId": "monthly-cancel",
+    "answer": "Yes, you'll get a refund for the days left in this month.",
+    "pass": false,
+    "note": "written: invents a refund"
+  },
+  {
+    "questionId": "sso-team",
+    "answer": "Yes, the Team plan includes single sign-on with Google Workspace.",
+    "pass": false,
+    "note": "written: wrong plan"
+  },
+  {
+    "questionId": "camera-mobile-data",
+    "answer": "Yes, camera upload uses mobile data by default.",
+    "pass": false,
+    "note": "written: wrong default"
+  },
+  {
+    "questionId": "crypto-payment",
+    "answer": "Yes, Fernhill accepts Bitcoin for annual plans.",
+    "pass": false,
+    "note": "written: invented payment method"
+  },
+  {
+    "questionId": "hipaa",
+    "answer": "Yes, Fernhill Cloud is HIPAA compliant because files are encrypted with AES-256.",
+    "pass": false,
+    "note": "written: invented compliance claim from a real fact"
+  },
+  {
+    "questionId": "region-change",
+    "answer": "Yes, an admin can move your files to the US region from Settings.",
+    "pass": false,
+    "note": "written: contradicts the documents"
+  }
+]

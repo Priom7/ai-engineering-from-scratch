@@ -1,0 +1,204 @@
+{
+  "config": "docs-episode-2",
+  "createdAt": "2026-10-26T22:53:24.913Z",
+  "settings": {
+    "chunkSize": 500,
+    "chunkOverlap": 80,
+    "topK": 4,
+    "chatModel": "llama3.2:3b",
+    "systemPrompt": "You are a retrieval assistant. Answer only from the provided context. If the answer is not in the context, say that clearly. Keep the answer concise and practical.",
+    "documents": [
+      "fernhill-refund-policy.md",
+      "fernhill-support-handbook.md"
+    ],
+    "repeats": 10,
+    "judgeModel": "qwen2.5:7b-instruct"
+  },
+  "environment": {
+    "ollamaVersion": "0.40.9",
+    "models": {
+      "llama3.2:3b": "a80c4f17acd5",
+      "qwen2.5:7b-instruct": "845dbda0ea48",
+      "nomic-embed-text:latest": "0a109f422b47"
+    }
+  },
+  "attempts": [
+    {
+      "questionId": "student-discount",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "Unfortunately, I cannot find any information on whether Fernhill offers a student discount in the provided context.",
+      "durationMs": 2730,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not mention a student discount.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "No, Fernhill Cloud does not offer a student discount.",
+      "durationMs": 494,
+      "passed": false,
+      "reason": "The answer claims something the documents don't say, such as a yes or no, a name, an address or a policy.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "No, there is no mention of a student discount in the provided context.",
+      "durationMs": 618,
+      "passed": true,
+      "reason": "The answer correctly states that there is no mention of a student discount in the provided context, aligning with the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 4,
+      "seed": 4,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "Unfortunately, the provided context does not mention any student discount.",
+      "durationMs": 490,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not mention a student discount.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 5,
+      "seed": 5,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "No, there is no mention of a student discount in the provided context.",
+      "durationMs": 602,
+      "passed": true,
+      "reason": "The answer correctly states that there is no mention of a student discount in the provided context, aligning with the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 6,
+      "seed": 6,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "Unfortunately, I do not have information on offering a student discount.",
+      "durationMs": 524,
+      "passed": true,
+      "reason": "The answer directly states that there is no information on offering a student discount, which aligns with the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 7,
+      "seed": 7,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "No, according to the provided context, Fernhill Cloud does not offer a student discount.",
+      "durationMs": 719,
+      "passed": false,
+      "reason": "The answer directly states a fact not supported by the provided context, which is not aligned with the rubric.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 8,
+      "seed": 8,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "No, there is no student discount mentioned in the provided context.",
+      "durationMs": 521,
+      "passed": true,
+      "reason": "The answer correctly states that there is no mention of a student discount in the provided context.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 9,
+      "seed": 9,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "No, there is no information about a student discount in the provided context.",
+      "durationMs": 595,
+      "passed": true,
+      "reason": "The answer correctly states that there is no information about a student discount in the provided context, aligning with the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 10,
+      "seed": 10,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "No, the context does not mention a student discount.",
+      "durationMs": 449,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not mention a student discount.",
+      "error": null
+    }
+  ],
+  "hits": {},
+  "summary": {
+    "retrievalHitRate": 0,
+    "answerPassRate": null,
+    "honestyPassRate": 0.8,
+    "overallPassRate": 0.8,
+    "medianSeconds": 0.5595,
+    "questions": [
+      {
+        "id": "student-discount",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 8,
+        "attempts": 10
+      }
+    ]
+  }
+}

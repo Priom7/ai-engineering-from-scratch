@@ -1,0 +1,15 @@
+flowchart LR
+    subgraph App["The RAG app (Episode 2)"]
+        UI["React frontend"] --> API["Express API"]
+        API --> RAG["rag.ts<br/>retrieve + generate"]
+    end
+    subgraph Evals["evals/"]
+        DS["dataset/questions.json<br/>24 questions"] --> RUN["runner.ts"]
+        RUN --> RAG
+        RUN --> GR["graders.ts<br/>facts, judge, refuse"]
+        GR --> SUM["summary.ts<br/>retrieval, answers, honesty, speed"]
+        SUM --> CMP["compare.ts"]
+        SUM --> GATE["gate.ts<br/>eval:check"]
+    end
+    RAG --> OLL["Ollama<br/>llama3.2:3b, nomic-embed-text"]
+    GR --> JUDGE["Ollama judge<br/>qwen2.5:7b-instruct"]

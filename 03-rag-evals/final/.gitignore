@@ -1,0 +1,11 @@
+node_modules
+dist
+.env
+.env.local
+.DS_Store
+uploads/*
+backend/data/*
+!uploads/.gitkeep
+!backend/data/.gitkeep
+
+evals/.cache/

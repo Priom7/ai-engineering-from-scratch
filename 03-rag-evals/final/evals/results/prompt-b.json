@@ -1,0 +1,1372 @@
+{
+  "config": "prompt-b",
+  "createdAt": "2026-10-26T21:28:22.785Z",
+  "settings": {
+    "chunkSize": 500,
+    "chunkOverlap": 80,
+    "topK": 4,
+    "chatModel": "llama3.2:3b",
+    "systemPrompt": "You answer questions about Fernhill Cloud using only the context. If the context does not contain the answer, reply exactly: I couldn't find that in the documents. Otherwise answer in one or two sentences and name the source document.",
+    "repeats": 3,
+    "judgeModel": "qwen2.5:7b-instruct"
+  },
+  "environment": {
+    "ollamaVersion": "0.40.9",
+    "models": {
+      "llama3.2:3b": "a80c4f17acd5",
+      "qwen2.5:7b-instruct": "845dbda0ea48",
+      "nomic-embed-text:latest": "0a109f422b47"
+    }
+  },
+  "attempts": [
+    {
+      "questionId": "refund-two-months",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "Unfortunately, you do not qualify for a full refund since it's been two months since your purchase, and the 30-day refund period has expired. However, you can request a partial refund of the unused months minus a 15% early-cancellation fee.\n\nSource document: fernhill-refund-policy.md",
+      "durationMs": 5107,
+      "passed": true,
+      "reason": "The answer correctly states that a full refund is not possible due to the expiration of the 30-day period, but also accurately mentions the possibility of a partial refund for the unused months minus a 15% early-cancellation fee.",
+      "error": null
+    },
+    {
+      "questionId": "refund-two-months",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "You can get a refund for your Fernhill Cloud annual plan within 30 days of purchase, but after that, you'll receive a refund for the unused months minus a 15% early-cancellation fee. This is stated in the Fernhill refund policy, specifically in the section on Annual plans.",
+      "durationMs": 3751,
+      "passed": true,
+      "reason": "The answer correctly states that a partial refund is possible after 30 days, which is two months after the purchase, and specifies the 15% early-cancellation fee.",
+      "error": null
+    },
+    {
+      "questionId": "refund-two-months",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "You can request a refund within 30 days of purchase, but after that, you can only get a refund for the unused months minus a 15% early-cancellation fee. Source document: fernhill-refund-policy.md",
+      "durationMs": 2745,
+      "passed": true,
+      "reason": "The answer correctly states that after 30 days, a refund is only possible for unused months minus a 15% early-cancellation fee, which aligns with the rubric.",
+      "error": null
+    },
+    {
+      "questionId": "monthly-cancel",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, if you cancel your monthly plan, you will not get this month refunded, but you will keep full access until the end of the billing period. [Source 1: fernhill-refund-policy.md]",
+      "durationMs": 5191,
+      "passed": true,
+      "reason": "The answer correctly states that the current month is not refunded, aligning with the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "monthly-cancel",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "If you cancel your monthly plan, you do not get this month refunded. You keep full access until the end of the billing period. \n\n[Source 1: fernhill-refund-policy.md]",
+      "durationMs": 1963,
+      "passed": true,
+      "reason": "The answer correctly states that the current month is not refunded, which aligns with the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "monthly-cancel",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "If you cancel your monthly plan, you do not get this month refunded, but you keep full access until the end of the billing period. (Source: fernhill-refund-policy.md)",
+      "durationMs": 2133,
+      "passed": true,
+      "reason": "The answer correctly states that the current month is not refunded, which meets the rubric requirement.",
+      "error": null
+    },
+    {
+      "questionId": "downgrade-credit",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "No, you won't get money back on your card if you move from the Team plan to the Starter plan in the middle of an annual term. This difference is added to your account as credit, which never expires while the account is active. [Source 2: fernhill-refund-policy.md]",
+      "durationMs": 6227,
+      "passed": true,
+      "reason": "The answer correctly states that the difference becomes account credit and is not refunded to the card, matching the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "downgrade-credit",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "You won't get money back on your card if you move from the Team plan to the Starter plan in the middle of an annual term. The difference is added to your account as credit, which account credit never expires while the account is active. \n\n[Source 1: fernhill-refund-policy.md]",
+      "durationMs": 3269,
+      "passed": true,
+      "reason": "The answer correctly states that the difference becomes account credit and is not refunded to the card, matching the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "downgrade-credit",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "You won't get money back on your card if you move from the Team plan to the Starter plan in the middle of an annual term. This difference is added to your account as credit, which never expires as long as the account is active. [Source: fernhill-refund-policy.md]",
+      "durationMs": 3596,
+      "passed": true,
+      "reason": "The answer correctly states that the difference becomes account credit and is not refunded to the card.",
+      "error": null
+    },
+    {
+      "questionId": "refund-speed",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Refunds typically reach your card within 5 to 10 business days after a refund request is approved. (Source: [fernhill-refund-policy.md](https://example.com/fernhill-refund-policy.md))",
+      "durationMs": 5365,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "refund-speed",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Refunds to your card typically take 5 to 10 business days to reach your card. Source document: [Source 1: fernhill-refund-policy.md]",
+      "durationMs": 1673,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "refund-speed",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Refunds typically take 5 to 10 business days to reach your card after being approved. [Source 1: fernhill-refund-policy.md]",
+      "durationMs": 1683,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "uptime-credit",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md",
+        "fernhill-pricing.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "If your monthly uptime falls below 99%, you can claim a service credit worth 25% of that month's fee. This is stated in [Source 1: fernhill-refund-policy.md].",
+      "durationMs": 5048,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "uptime-credit",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md",
+        "fernhill-pricing.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "Since the uptime was 98.7%, which is below 99%, you can claim a 25% service credit for that month. [Source 2: fernhill-support-handbook.md]",
+      "durationMs": 2016,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "uptime-credit",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md",
+        "fernhill-pricing.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "Since the uptime was 98.7%, which is below 99%, you can claim a service credit worth 25% of that month's fee. [Source 2: fernhill-support-handbook.md]",
+      "durationMs": 2455,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "sev1-escalation",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-support-handbook.md",
+        "fernhill-support-handbook.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "If an engineer has not replied to a Severity 1 ticket within 30 minutes, they are automatically paged. (Source 2: fernhill-support-handbook.md)",
+      "durationMs": 5131,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "sev1-escalation",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-support-handbook.md",
+        "fernhill-support-handbook.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "An engineer gets paged automatically if a Severity 1 ticket has no response within 30 minutes, and business plan customers can also call the emergency phone line. (Source: fernhill-support-handbook.md)",
+      "durationMs": 2053,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "sev1-escalation",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-support-handbook.md",
+        "fernhill-support-handbook.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "An engineer gets paged automatically if a Severity 1 ticket has no response within 30 minutes. (Source: fernhill-support-handbook.md)",
+      "durationMs": 1609,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "export-time",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-account-security.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "Exports are ready within 24 hours.\n\n[Source 1: fernhill-support-handbook.md]",
+      "durationMs": 4467,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "export-time",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-account-security.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "Exports of account data are ready within 24 hours. (Source: fernhill-support-handbook.md)",
+      "durationMs": 1048,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "export-time",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-account-security.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "Exports are ready within 24 hours. (Source: fernhill-support-handbook.md, Data export and deletion)",
+      "durationMs": 1146,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "team-price",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "The Team plan costs £12 per user per month. [Source 1: fernhill-pricing.md]",
+      "durationMs": 3758,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "team-price",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "The Team plan costs £12 per user per month, including 1 TB of storage per team.\n\n[Source 1: fernhill-pricing.md]",
+      "durationMs": 1561,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "team-price",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "The Team plan costs £12 per user per month. [Source 1: fernhill-pricing.md]",
+      "durationMs": 1144,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "annual-saving",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "Paying yearly would save you 2 months' worth of service, equivalent to £12. Source: [Source 4: fernhill-pricing.md]",
+      "durationMs": 5123,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "annual-saving",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "You will save 2 months of service (worth £12 per user) if you pay yearly instead of monthly. [Source 4: fernhill-pricing.md]",
+      "durationMs": 1667,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "annual-saving",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "You would save 2 months of service, equivalent to £12, if you pay yearly instead of monthly. [Source: fernhill-pricing.md]",
+      "durationMs": 1644,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "charity-discount",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "As a registered charity, you get 30% off the Team and Business plans. Apply from the Billing page with your charity registration number. [Source 1: fernhill-pricing.md]",
+      "durationMs": 5087,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "charity-discount",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, you get a 30% discount on the Team and Business plans as a registered charity. [Source 1: fernhill-pricing.md]",
+      "durationMs": 1529,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "charity-discount",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, registered charities get 30% off the Team and Business plans. (Source 3: fernhill-pricing.md)",
+      "durationMs": 1348,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "free-trial",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-account-security.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "Yes, Fernhill Cloud offers a 14-day free trial, and no payment card is needed to start the trial. (Source: fernhill-pricing.md)",
+      "durationMs": 4458,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "free-trial",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-account-security.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "Fernhill offers a 14-day free trial with no payment card required. (Source: [fernhill-pricing.md](https://github.com/fernhill/fernhill-docs/blob/main/docs/pricing.md))",
+      "durationMs": 2206,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "free-trial",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-account-security.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "Fernhill offers a 14-day free trial for every plan, with no payment card required to start the trial. [Source: fernhill-pricing.md]",
+      "durationMs": 1744,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "sso-team",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-account-security.md",
+        "fernhill-support-handbook.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "Yes, single sign-on is available on the Business plan, but not on the Team plan.\n\n[Source 2: fernhill-account-security.md]",
+      "durationMs": 4376,
+      "passed": true,
+      "reason": "The answer correctly states that single sign-on is not available on the Team plan.",
+      "error": null
+    },
+    {
+      "questionId": "sso-team",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-account-security.md",
+        "fernhill-support-handbook.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "Single sign-on is available on the Business plan only, and not on the Team plan. [Source 2: fernhill-account-security.md]",
+      "durationMs": 1415,
+      "passed": true,
+      "reason": "The answer correctly states that single sign-on is not available on the Team plan.",
+      "error": null
+    },
+    {
+      "questionId": "sso-team",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-account-security.md",
+        "fernhill-support-handbook.md",
+        "fernhill-pricing.md"
+      ],
+      "answer": "Single sign-on is available on the Business plan only. [Source 2: fernhill-account-security.md]",
+      "durationMs": 1113,
+      "passed": true,
+      "reason": "The answer correctly states that single sign-on is only available on the Business plan, which aligns with the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "audit-log-business",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "The audit log on the Business plan is kept for one year. Source document: fernhill-account-security.md",
+      "durationMs": 4398,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "audit-log-business",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Business plans keep an audit log of sign-ins, shares, and deletions for one year. \n\n[Source 1: fernhill-account-security.md]",
+      "durationMs": 1521,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "audit-log-business",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Business plans keep an audit log of sign-ins, shares and deletions for one year.\n\n[Source 1: fernhill-account-security.md]",
+      "durationMs": 1469,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "region-change",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-account-security.md",
+        "fernhill-support-handbook.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "Yes, you will not be able to move your files to the US later, as the region cannot be changed after the team is created. [Source 1: fernhill-account-security.md]",
+      "durationMs": 5060,
+      "passed": true,
+      "reason": "The answer correctly states that the region cannot be changed after the team is created, aligning with the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "region-change",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-account-security.md",
+        "fernhill-support-handbook.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "No, the region cannot be changed later. [Source 1: fernhill-account-security.md]",
+      "durationMs": 1095,
+      "passed": true,
+      "reason": "The answer correctly states that the region cannot be changed later, matching the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "region-change",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-account-security.md",
+        "fernhill-support-handbook.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "No, you cannot move your files to the US later, as the region chosen when you signed up cannot be changed. (Source: [fernhill-account-security.md](fernhill-account-security.md))",
+      "durationMs": 2210,
+      "passed": true,
+      "reason": "The answer correctly states that the region cannot be changed after the team is created, matching the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "web-upload-limit",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "You can upload files up to 5 GB through the web. [Source 3: fernhill-sync-and-storage.md]",
+      "durationMs": 4328,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "web-upload-limit",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "The biggest file you can upload through the web is up to 5 GB. [Source 3: fernhill-sync-and-storage.md]",
+      "durationMs": 1382,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "web-upload-limit",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "The biggest file you can upload through the web is up to 5 GB.\n\n[Source 3: fernhill-sync-and-storage.md]",
+      "durationMs": 1417,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "version-history-team",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-sync-and-storage.md",
+        "fernhill-support-handbook.md",
+        "fernhill-refund-policy.md",
+        "fernhill-account-security.md"
+      ],
+      "answer": "Fernhill keeps earlier versions of every file for 30 days on Team and Business plans.\n\n(Source: fernhill-sync-and-storage.md)",
+      "durationMs": 4606,
+      "passed": false,
+      "reason": "Missing: \"180 days\".",
+      "error": null
+    },
+    {
+      "questionId": "version-history-team",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-sync-and-storage.md",
+        "fernhill-support-handbook.md",
+        "fernhill-refund-policy.md",
+        "fernhill-account-security.md"
+      ],
+      "answer": "You can restore an earlier version of a file on the Team plan for up to 180 days.\n\n[Source 1: fernhill-sync-and-storage.md]",
+      "durationMs": 1592,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "version-history-team",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-sync-and-storage.md",
+        "fernhill-support-handbook.md",
+        "fernhill-refund-policy.md",
+        "fernhill-account-security.md"
+      ],
+      "answer": "You can restore an earlier version of a file on the Team plan for 180 days.\n\n[Source 1: fernhill-sync-and-storage.md]",
+      "durationMs": 1540,
+      "passed": true,
+      "reason": "Says every required fact.",
+      "error": null
+    },
+    {
+      "questionId": "camera-mobile-data",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-mobile-apps.md",
+        "fernhill-mobile-apps.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "Camera upload may use mobile data if it's enabled in the app's settings. [Source: fernhill-mobile-apps.md]",
+      "durationMs": 4106,
+      "passed": true,
+      "reason": "The answer correctly states that camera upload may use mobile data if enabled, which aligns with the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "camera-mobile-data",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-mobile-apps.md",
+        "fernhill-mobile-apps.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "Camera upload will use your mobile data if you allow it in the Settings. [Source 1: fernhill-mobile-apps.md]",
+      "durationMs": 1352,
+      "passed": true,
+      "reason": "The answer correctly states that camera upload uses mobile data if allowed, which aligns with the reference answer.",
+      "error": null
+    },
+    {
+      "questionId": "camera-mobile-data",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-mobile-apps.md",
+        "fernhill-mobile-apps.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "Camera upload may use mobile data if allowed in Settings. [Source 1: fernhill-mobile-apps.md]",
+      "durationMs": 1176,
+      "passed": false,
+      "reason": "The answer correctly states that camera upload may use mobile data if allowed, but it does not clearly convey that it doesn't use mobile data by default.",
+      "error": null
+    },
+    {
+      "questionId": "passcode-wrong",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-mobile-apps.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "After 10 wrong passcode attempts, the app signs out and removes offline files from the device. (Source: fernhill-mobile-apps.md)",
+      "durationMs": 4392,
+      "passed": true,
+      "reason": "The answer correctly states that the app signs out after 10 wrong attempts, which matches the rubric.",
+      "error": null
+    },
+    {
+      "questionId": "passcode-wrong",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-mobile-apps.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "If someone enters the wrong passcode too many times, the app will sign out and remove offline files from the device after 10 wrong attempts. (Source: fernhill-mobile-apps.md)",
+      "durationMs": 1941,
+      "passed": true,
+      "reason": "The answer correctly states that the app signs out after 10 wrong attempts, which meets the rubric.",
+      "error": null
+    },
+    {
+      "questionId": "passcode-wrong",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-mobile-apps.md",
+        "fernhill-refund-policy.md",
+        "fernhill-support-handbook.md",
+        "fernhill-support-handbook.md"
+      ],
+      "answer": "If someone enters the wrong passcode too many times, the app signs out and removes offline files from the device. (Source: fernhill-mobile-apps.md)",
+      "durationMs": 1729,
+      "passed": true,
+      "reason": "The answer correctly states that the app signs out after 10 wrong attempts, which aligns with the rubric.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Fernhill Cloud offers a 30% student discount on the Team and Business plans, and annual plans come with a two-month free trial. [Source 1: fernhill-pricing.md]",
+      "durationMs": 5205,
+      "passed": false,
+      "reason": "The answer incorrectly states a 30% student discount, which is not mentioned in the sources.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, we offer a 30% discount for non-profit organizations on the Team and Business plans, and the discount can be applied from the Billing page with the charity registration number. \n\n[Source 1: fernhill-pricing.md]",
+      "durationMs": 2366,
+      "passed": false,
+      "reason": "The answer claims a yes, which the documents do not explicitly state.",
+      "error": null
+    },
+    {
+      "questionId": "student-discount",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Yes, Fernhill Cloud offers a 30% discount for registered charities on Team and Business plans. [Source 1: fernhill-pricing.md]",
+      "durationMs": 1690,
+      "passed": false,
+      "reason": "The answer claims a yes or no, which the documents do not explicitly state.",
+      "error": null
+    },
+    {
+      "questionId": "office-address",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-account-security.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-mobile-apps.md"
+      ],
+      "answer": "Unfortunately, I couldn't find that in the documents.",
+      "durationMs": 4143,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not provide the information requested.",
+      "error": null
+    },
+    {
+      "questionId": "office-address",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-account-security.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-mobile-apps.md"
+      ],
+      "answer": "I couldn't find that in the documents.",
+      "durationMs": 487,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not provide the information requested.",
+      "error": null
+    },
+    {
+      "questionId": "office-address",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-account-security.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-mobile-apps.md"
+      ],
+      "answer": "I couldn't find that in the documents.",
+      "durationMs": 479,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not provide the information requested.",
+      "error": null
+    },
+    {
+      "questionId": "crypto-payment",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "Fernhill does not accept Bitcoin as payment for its subscriptions. [Source 1: fernhill-pricing.md]",
+      "durationMs": 3413,
+      "passed": false,
+      "reason": "The answer directly contradicts the reference answer and the context provided, as it claims information about Bitcoin payments which is not mentioned in the sources.",
+      "error": null
+    },
+    {
+      "questionId": "crypto-payment",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "I couldn't find that in the documents.",
+      "durationMs": 466,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not provide information on paying with Bitcoin.",
+      "error": null
+    },
+    {
+      "questionId": "crypto-payment",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-pricing.md",
+        "fernhill-pricing.md",
+        "fernhill-sync-and-storage.md",
+        "fernhill-refund-policy.md"
+      ],
+      "answer": "I couldn't find that in the documents.",
+      "durationMs": 470,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not provide information on paying with Bitcoin.",
+      "error": null
+    },
+    {
+      "questionId": "slack-integration",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-sync-and-storage.md",
+        "fernhill-support-handbook.md",
+        "fernhill-mobile-apps.md",
+        "fernhill-account-security.md"
+      ],
+      "answer": "Yes, Fernhill integrates with Slack.\n\nSource document: I couldn't find that in the documents.",
+      "durationMs": 4114,
+      "passed": false,
+      "reason": "The answer claims a yes or no that the documents do not mention.",
+      "error": null
+    },
+    {
+      "questionId": "slack-integration",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-sync-and-storage.md",
+        "fernhill-support-handbook.md",
+        "fernhill-mobile-apps.md",
+        "fernhill-account-security.md"
+      ],
+      "answer": "Fernhill does not explicitly mention integrating with Slack, but it does mention single sign-on with Okta, which could potentially be used to integrate with Slack through Okta's API, but this is not explicitly mentioned. I couldn't find that in the documents.",
+      "durationMs": 2600,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not mention integrating with Slack, and that the information couldn't be found.",
+      "error": null
+    },
+    {
+      "questionId": "slack-integration",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-sync-and-storage.md",
+        "fernhill-support-handbook.md",
+        "fernhill-mobile-apps.md",
+        "fernhill-account-security.md"
+      ],
+      "answer": "Fernhill does not explicitly mention integrating with Slack in the provided documents.",
+      "durationMs": 811,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not mention integrating with Slack.",
+      "error": null
+    },
+    {
+      "questionId": "ceo-name",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-pricing.md",
+        "fernhill-account-security.md",
+        "fernhill-mobile-apps.md"
+      ],
+      "answer": "I couldn't find that in the documents.",
+      "durationMs": 3882,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not provide the information requested.",
+      "error": null
+    },
+    {
+      "questionId": "ceo-name",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-pricing.md",
+        "fernhill-account-security.md",
+        "fernhill-mobile-apps.md"
+      ],
+      "answer": "I couldn't find that in the documents.",
+      "durationMs": 491,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not provide the information requested.",
+      "error": null
+    },
+    {
+      "questionId": "ceo-name",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-support-handbook.md",
+        "fernhill-pricing.md",
+        "fernhill-account-security.md",
+        "fernhill-mobile-apps.md"
+      ],
+      "answer": "I couldn't find that in the documents.",
+      "durationMs": 478,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not provide the information requested.",
+      "error": null
+    },
+    {
+      "questionId": "hipaa",
+      "attempt": 1,
+      "seed": 1,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-mobile-apps.md",
+        "fernhill-support-handbook.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "Fernhill Cloud appears to be HIPAA compliant, as it mentions requirements and best practices for protecting sensitive data, such as two-factor authentication, single sign-on, and support for small teams. However, I couldn't find specific information confirming HIPAA compliance. \n\n[Source: fernhill-account-security.md, fernhill-support-handbook.md, fernhill-sync-and-storage.md]",
+      "durationMs": 6652,
+      "passed": false,
+      "reason": "The answer introduces new information not supported by the sources, such as 'two-factor authentication, single sign-on, and support for small teams' and 'best practices for protecting sensitive data'.",
+      "error": null
+    },
+    {
+      "questionId": "hipaa",
+      "attempt": 2,
+      "seed": 2,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-mobile-apps.md",
+        "fernhill-support-handbook.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "I couldn't find that in the documents.",
+      "durationMs": 506,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not provide information about HIPAA compliance.",
+      "error": null
+    },
+    {
+      "questionId": "hipaa",
+      "attempt": 3,
+      "seed": 3,
+      "sources": [
+        "fernhill-account-security.md",
+        "fernhill-mobile-apps.md",
+        "fernhill-support-handbook.md",
+        "fernhill-sync-and-storage.md"
+      ],
+      "answer": "I couldn't find that in the documents.",
+      "durationMs": 521,
+      "passed": true,
+      "reason": "The answer correctly states that the documents do not provide information about HIPAA compliance.",
+      "error": null
+    }
+  ],
+  "hits": {
+    "refund-two-months": true,
+    "monthly-cancel": true,
+    "downgrade-credit": true,
+    "refund-speed": true,
+    "uptime-credit": true,
+    "sev1-escalation": true,
+    "export-time": true,
+    "team-price": true,
+    "annual-saving": true,
+    "charity-discount": true,
+    "free-trial": true,
+    "sso-team": true,
+    "audit-log-business": true,
+    "region-change": true,
+    "web-upload-limit": true,
+    "version-history-team": true,
+    "camera-mobile-data": true,
+    "passcode-wrong": true
+  },
+  "summary": {
+    "retrievalHitRate": 1,
+    "answerPassRate": 0.963,
+    "honestyPassRate": 0.6667,
+    "overallPassRate": 0.8889,
+    "medianSeconds": 1.9895,
+    "questions": [
+      {
+        "id": "refund-two-months",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "monthly-cancel",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "downgrade-credit",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "refund-speed",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "uptime-credit",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "sev1-escalation",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "export-time",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "team-price",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "annual-saving",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "charity-discount",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "free-trial",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "sso-team",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "audit-log-business",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "region-change",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "web-upload-limit",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "version-history-team",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 2,
+        "attempts": 3
+      },
+      {
+        "id": "camera-mobile-data",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 2,
+        "attempts": 3
+      },
+      {
+        "id": "passcode-wrong",
+        "kind": "answerable",
+        "hit": true,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "student-discount",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 0,
+        "attempts": 3
+      },
+      {
+        "id": "office-address",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "crypto-payment",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 2,
+        "attempts": 3
+      },
+      {
+        "id": "slack-integration",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 2,
+        "attempts": 3
+      },
+      {
+        "id": "ceo-name",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 3,
+        "attempts": 3
+      },
+      {
+        "id": "hipaa",
+        "kind": "unanswerable",
+        "hit": null,
+        "passes": 2,
+        "attempts": 3
+      }
+    ]
+  }
+}
