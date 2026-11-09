@@ -1,0 +1,242 @@
+{
+  "emails": [
+    {
+      "id": "refund-two-months",
+      "from": "Priya Shah",
+      "subject": "Refund for our annual plan",
+      "body": "Hi, we bought the annual Team plan two months ago, but we're moving to another tool. Can we get our money back?\n\nThanks,\nPriya",
+      "expected": {
+        "intent": "refund",
+        "route": "ready",
+        "rubric": "Pass only if the reply says a partial refund is possible: the unused months back, minus a 15% early-cancellation fee. Fail if it says no refund is possible or promises a full refund."
+      }
+    },
+    {
+      "id": "monthly-cancel",
+      "from": "Tom Becker",
+      "subject": "Cancelling monthly",
+      "body": "If I cancel our monthly Starter plan today, do I get this month refunded?\nTom",
+      "expected": {
+        "intent": "refund",
+        "route": "ready",
+        "rubric": "Pass only if the reply says the current month is not refunded. Fail if it says the month is refunded."
+      }
+    },
+    {
+      "id": "refund-speed",
+      "from": "Ana Costa",
+      "subject": "Where is my refund?",
+      "body": "We asked for a refund last week and it was approved. How long until the money shows up on our card?",
+      "expected": {
+        "intent": "refund",
+        "route": "ready",
+        "mustSay": [
+          "5 to 10 business days|5-10 business days"
+        ]
+      }
+    },
+    {
+      "id": "uptime-credit",
+      "from": "Liam Ortiz",
+      "subject": "Uptime last month",
+      "body": "Our monitoring says Fernhill was only up 98.7% last month. What service credit can we claim?",
+      "expected": {
+        "intent": "billing",
+        "route": "ready",
+        "mustSay": [
+          "25%|25 percent"
+        ]
+      }
+    },
+    {
+      "id": "export-time",
+      "from": "Grace Kim",
+      "subject": "Data export for an audit",
+      "body": "We need a full export of our account data for an audit. How long does it take to be ready?",
+      "expected": {
+        "intent": "account",
+        "route": "ready",
+        "mustSay": [
+          "24 hours"
+        ]
+      }
+    },
+    {
+      "id": "team-price",
+      "from": "Omar Haddad",
+      "subject": "Team plan price",
+      "body": "Before we upgrade: how much does the Team plan cost per user?",
+      "expected": {
+        "intent": "billing",
+        "route": "ready",
+        "mustSay": [
+          "12"
+        ]
+      }
+    },
+    {
+      "id": "charity-discount",
+      "from": "Helen Brooks",
+      "subject": "Charity pricing",
+      "body": "We're a registered charity. Is there any discount for us?",
+      "expected": {
+        "intent": "billing",
+        "route": "ready",
+        "mustSay": [
+          "30%|30 percent"
+        ]
+      }
+    },
+    {
+      "id": "sso-team",
+      "from": "Daniel Wu",
+      "subject": "Okta SSO",
+      "body": "Can we turn on single sign-on with Okta on our Team plan?",
+      "expected": {
+        "intent": "account",
+        "route": "ready",
+        "rubric": "Pass only if the reply says single sign-on is not available on the Team plan, or that it is only on the Business plan. Fail if it says the Team plan can use it."
+      }
+    },
+    {
+      "id": "region-change",
+      "from": "Sofia Rossi",
+      "subject": "Moving our data region",
+      "body": "We picked the EU region when we signed up. Can you move all our files to the US region now?",
+      "expected": {
+        "intent": "account",
+        "route": "ready",
+        "rubric": "Pass only if the reply says the region can't be changed after the team is created. Fail if it says the files can be moved."
+      }
+    },
+    {
+      "id": "web-upload-limit",
+      "from": "Ben Carter",
+      "subject": "Upload keeps failing",
+      "body": "I'm trying to upload a 7 GB video through the website and it keeps failing. Is there a limit?",
+      "expected": {
+        "intent": "how_to",
+        "route": "ready",
+        "mustSay": [
+          "5 GB|5GB"
+        ]
+      }
+    },
+    {
+      "id": "version-history",
+      "from": "Mia Lopez",
+      "subject": "Old version of a file",
+      "body": "On the Team plan, how far back can I restore an older version of a file?",
+      "expected": {
+        "intent": "how_to",
+        "route": "ready",
+        "mustSay": [
+          "180 days"
+        ]
+      }
+    },
+    {
+      "id": "passcode-wrong",
+      "from": "Chris Evans",
+      "subject": "Locked out of the iPhone app",
+      "body": "My son typed the wrong passcode into the Fernhill app on my iPhone a bunch of times. What happens now?",
+      "expected": {
+        "intent": "account",
+        "route": "ready",
+        "rubric": "Pass only if the reply says the app signs out after 10 wrong attempts. Fail if it gives a different number or consequence."
+      }
+    },
+    {
+      "id": "student-discount",
+      "from": "Leo Martin",
+      "subject": "Student discount?",
+      "body": "Hi! I'm a student. Do you offer a student discount?",
+      "expected": {
+        "intent": "billing",
+        "route": "review",
+        "refuse": true,
+        "rubric": "The documents do not answer this. Pass if the reply says it can't find the answer, or that the team will check. It may mention related facts that are in the documents. Fail if it gives an answer the documents don't contain: a yes or no, a price, a policy, a feature or an address."
+      }
+    },
+    {
+      "id": "slack-integration",
+      "from": "Nadia Ali",
+      "subject": "Slack",
+      "body": "Does Fernhill integrate with Slack? We'd like notifications in our channels.",
+      "expected": {
+        "intent": "how_to",
+        "route": "review",
+        "refuse": true,
+        "rubric": "The documents do not answer this. Pass if the reply says it can't find the answer, or that the team will check. It may mention related facts that are in the documents. Fail if it gives an answer the documents don't contain: a yes or no, a price, a policy, a feature or an address."
+      }
+    },
+    {
+      "id": "hipaa",
+      "from": "Dr. Paul Green",
+      "subject": "Compliance question",
+      "body": "We're a small clinic. Is Fernhill Cloud HIPAA compliant?",
+      "expected": {
+        "intent": "account",
+        "route": "review",
+        "refuse": true,
+        "rubric": "The documents do not answer this. Pass if the reply says it can't find the answer, or that the team will check. It may mention related facts that are in the documents. Fail if it gives an answer the documents don't contain: a yes or no, a price, a policy, a feature or an address."
+      }
+    },
+    {
+      "id": "office-address",
+      "from": "Emma Novak",
+      "subject": "Office address",
+      "body": "What's the address of your office? I'd like to send a letter.",
+      "expected": {
+        "intent": "other",
+        "route": "review",
+        "refuse": true,
+        "rubric": "The documents do not answer this. Pass if the reply says it can't find the answer, or that the team will check. It may mention related facts that are in the documents. Fail if it gives an answer the documents don't contain: a yes or no, a price, a policy, a feature or an address."
+      }
+    },
+    {
+      "id": "outage-login",
+      "from": "Ravi Patel",
+      "subject": "URGENT: everything is down",
+      "body": "URGENT. Nobody on our account can log in or sync since 9am. Everything is down and our team can't work!",
+      "expected": {
+        "intent": "outage",
+        "route": "escalated"
+      }
+    },
+    {
+      "id": "outage-sync",
+      "from": "Julia Meyer",
+      "subject": "Files not syncing for the whole team",
+      "body": "Production files won't sync for our whole team and clients are waiting on us. Is Fernhill down?? Please help ASAP.",
+      "expected": {
+        "intent": "outage",
+        "route": "escalated"
+      }
+    },
+    {
+      "id": "double-charge",
+      "from": "Mark Silva",
+      "subject": "Charged twice!!!",
+      "body": "You charged us twice this month. This is unacceptable. Fix it now.",
+      "expected": {
+        "intent": "billing",
+        "route": "review",
+        "refuse": true,
+        "rubric": "The documents don't cover double charges. Pass if the reply says the team will look into the charge, or asks for details such as the invoice. Fail if it answers with a refund policy, an amount or a timeline."
+      }
+    },
+    {
+      "id": "vague",
+      "from": "sam",
+      "subject": "help",
+      "body": "hey it doesnt work",
+      "expected": {
+        "intent": "other",
+        "route": "review",
+        "refuse": true,
+        "rubric": "The email doesn't say what's wrong. Pass if the reply asks for more details about the problem, or says the team will look into it. Fail if it assumes a specific problem and states its cause or fix as fact."
+      }
+    }
+  ]
+}

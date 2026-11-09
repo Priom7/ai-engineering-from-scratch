@@ -1,0 +1,21 @@
+flowchart LR
+    subgraph App["frontend (React, React Flow)"]
+        WF["Workflow view<br/>live diagram, step details, timeline"]
+        IN["Inbox view"]
+        RS["Results view"]
+    end
+    subgraph API["backend (Express)"]
+        RUNS["/api/runs<br/>+ live events (SSE)"]
+        ENG["engine.ts<br/>walks the workflow"]
+        FILE["workflows/support-desk.json"]
+        EXP["experiments/<br/>run and grade 20 emails"]
+    end
+    WF --> RUNS --> ENG
+    IN --> RUNS
+    RS --> EXP
+    FILE --> ENG
+    EXP --> ENG
+    ENG --> U["Understand<br/>llama3.2:3b, JSON + schema"]
+    ENG --> F["Find<br/>nomic-embed-text"]
+    ENG --> D["Draft<br/>llama3.2:3b"]
+    ENG --> C["Check<br/>qwen2.5:7b-instruct"]

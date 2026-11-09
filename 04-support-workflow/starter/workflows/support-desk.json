@@ -1,0 +1,250 @@
+{
+  "id": "support-desk",
+  "name": "Fernhill Support Desk",
+  "start": "understand",
+  "nodes": [
+    {
+      "id": "understand",
+      "title": "Understand",
+      "type": "llm-json",
+      "position": {
+        "x": 0,
+        "y": 130
+      },
+      "model": "llama3.2:3b",
+      "temperature": 0,
+      "useFormat": true,
+      "maxRetries": 2,
+      "system": "You read customer emails for Fernhill Cloud support and pull out structured fields. Reply with JSON only.",
+      "prompt": "Email:\n{{email}}\n\nReturn JSON with these fields:\n- intent: one of refund, billing, outage, account, how_to, other\n- plan: starter, team, business, or unknown if the email doesn't say\n- urgency: low, normal or high (high only when the service is down for them or data is at risk)\n- question: the customer's question, rewritten as one clear sentence",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "intent": {
+            "type": "string",
+            "enum": [
+              "refund",
+              "billing",
+              "outage",
+              "account",
+              "how_to",
+              "other"
+            ]
+          },
+          "plan": {
+            "type": "string",
+            "enum": [
+              "starter",
+              "team",
+              "business",
+              "unknown"
+            ]
+          },
+          "urgency": {
+            "type": "string",
+            "enum": [
+              "low",
+              "normal",
+              "high"
+            ]
+          },
+          "question": {
+            "type": "string",
+            "minLength": 5
+          }
+        },
+        "required": [
+          "intent",
+          "plan",
+          "urgency",
+          "question"
+        ],
+        "additionalProperties": false
+      },
+      "output": "understand"
+    },
+    {
+      "id": "is-outage",
+      "title": "Outage?",
+      "type": "condition",
+      "position": {
+        "x": 220,
+        "y": 130
+      },
+      "all": [
+        {
+          "key": "understand.intent",
+          "equals": "outage"
+        },
+        {
+          "key": "understand.urgency",
+          "equals": "high"
+        }
+      ]
+    },
+    {
+      "id": "find",
+      "title": "Find",
+      "type": "retrieve",
+      "position": {
+        "x": 440,
+        "y": 130
+      },
+      "query": "{{understand.question}}",
+      "topK": 4,
+      "output": "find"
+    },
+    {
+      "id": "draft",
+      "title": "Draft",
+      "type": "llm-text",
+      "position": {
+        "x": 660,
+        "y": 130
+      },
+      "model": "llama3.2:3b",
+      "system": "You are a support agent for Fernhill Cloud. Answer the customer using only the sources. Cite the sources you use as [Source n]. If the sources don't answer the question, say that you'll check with the team, and don't guess. Keep the reply short and friendly.",
+      "prompt": "Customer email:\n{{email}}\n\nTheir question: {{understand.question}}\n\nSources:\n{{find.context}}\n\nWrite the reply.",
+      "output": "draft"
+    },
+    {
+      "id": "check",
+      "title": "Check",
+      "type": "judge",
+      "position": {
+        "x": 880,
+        "y": 130
+      },
+      "model": "qwen2.5:7b-instruct",
+      "answerFrom": "draft",
+      "contextFrom": "find.context",
+      "output": "check"
+    },
+    {
+      "id": "supported",
+      "title": "Supported?",
+      "type": "condition",
+      "position": {
+        "x": 1100,
+        "y": 130
+      },
+      "all": [
+        {
+          "key": "check.supported",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "ready",
+      "title": "Ready to send",
+      "type": "end",
+      "outcome": "ready",
+      "position": {
+        "x": 1320,
+        "y": 0
+      }
+    },
+    {
+      "id": "review",
+      "title": "Needs review",
+      "type": "end",
+      "outcome": "review",
+      "position": {
+        "x": 1320,
+        "y": 260
+      }
+    },
+    {
+      "id": "escalate",
+      "title": "Escalate",
+      "type": "end",
+      "outcome": "escalated",
+      "position": {
+        "x": 440,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "understand-is-outage-next",
+      "from": "understand",
+      "to": "is-outage",
+      "kind": "next"
+    },
+    {
+      "id": "understand-review-failure",
+      "from": "understand",
+      "to": "review",
+      "kind": "failure",
+      "label": "invalid JSON"
+    },
+    {
+      "id": "is-outage-escalate-true",
+      "from": "is-outage",
+      "to": "escalate",
+      "kind": "true",
+      "label": "outage"
+    },
+    {
+      "id": "is-outage-find-false",
+      "from": "is-outage",
+      "to": "find",
+      "kind": "false"
+    },
+    {
+      "id": "find-draft-next",
+      "from": "find",
+      "to": "draft",
+      "kind": "next"
+    },
+    {
+      "id": "find-review-failure",
+      "from": "find",
+      "to": "review",
+      "kind": "failure",
+      "label": "error"
+    },
+    {
+      "id": "draft-check-next",
+      "from": "draft",
+      "to": "check",
+      "kind": "next"
+    },
+    {
+      "id": "draft-review-failure",
+      "from": "draft",
+      "to": "review",
+      "kind": "failure",
+      "label": "error"
+    },
+    {
+      "id": "check-supported-next",
+      "from": "check",
+      "to": "supported",
+      "kind": "next"
+    },
+    {
+      "id": "check-review-failure",
+      "from": "check",
+      "to": "review",
+      "kind": "failure",
+      "label": "error"
+    },
+    {
+      "id": "supported-ready-true",
+      "from": "supported",
+      "to": "ready",
+      "kind": "true",
+      "label": "supported"
+    },
+    {
+      "id": "supported-review-false",
+      "from": "supported",
+      "to": "review",
+      "kind": "false",
+      "label": "unsupported claims"
+    }
+  ]
+}

@@ -1,0 +1,1994 @@
+{
+  "name": "workflow",
+  "mode": "workflow",
+  "createdAt": "2026-10-28T22:17:50.220Z",
+  "settings": {
+    "answerModel": "llama3.2:3b",
+    "checkModel": "qwen2.5:7b-instruct",
+    "useFormat": true,
+    "graderModel": "qwen2.5:7b-instruct"
+  },
+  "environment": {
+    "ollamaVersion": "0.40.9"
+  },
+  "summary": {
+    "emails": 20,
+    "sentWrong": 1,
+    "sentRight": 8,
+    "caught": 4,
+    "ready": 9,
+    "review": 9,
+    "escalated": 2,
+    "failed": 0,
+    "escalationCorrect": 20,
+    "reviewedButCorrect": 5,
+    "intentAccuracy": 0.6,
+    "jsonFirstTry": 1,
+    "jsonAfterRetry": 1,
+    "medianSeconds": 31.37,
+    "stepMedians": {
+      "understand": 5.74,
+      "is-outage": 0,
+      "find": 0.81,
+      "draft": 6.34,
+      "check": 18.58,
+      "supported": 0,
+      "review": 0,
+      "ready": 0,
+      "escalate": 0
+    }
+  },
+  "results": [
+    {
+      "emailId": "refund-two-months",
+      "mode": "workflow",
+      "outcome": "review",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": false,
+      "caught": true,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 36001,
+      "stepMs": {
+        "understand": 5503,
+        "is-outage": 0,
+        "find": 809,
+        "draft": 8326,
+        "check": 21314,
+        "supported": 3,
+        "review": 0
+      },
+      "reply": "Hi Priya,\n\nThank you for reaching out to us about a refund for your annual Team plan. According to our Refund Policy [Source 1], annual plans can be refunded in full within 30 days of purchase.\n\nYou purchased your annual Team plan two months ago, which means you are eligible for a full refund. We'll process your refund as soon as possible.\n\nTo initiate the refund process, please email us at billing@fernhill.example with your account email and invoice number, or use the Request refund button on the Billing page. We'll review your request within 2 business days.\n\nIf you have any further questions or concerns, feel free to ask. We're here to help.\n\nBest regards,\n[Your Name]\nFernhill Cloud Support",
+      "gradeReason": "The reply does not meet the rubric because it promises a full refund instead of a partial refund minus a 15% early-cancellation fee.",
+      "check": {
+        "supported": false,
+        "reason": "The reply does not mention the 15% early-cancellation fee for refunds after 30 days, which is a factual claim not supported by the sources.",
+        "unsupportedClaims": [
+          "Annual plans can be refunded in full within 30 days of purchase. After 30 days, we refund the unused months minus a 15% early-cancellation fee."
+        ]
+      },
+      "understand": {
+        "intent": "refund",
+        "plan": "team",
+        "urgency": "normal",
+        "question": "Can Fernhill Cloud provide a refund for the annual Team plan?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 5503,
+          "modelMs": 2334,
+          "loadMs": 3109,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 809,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 8326,
+          "modelMs": 8319,
+          "loadMs": 3,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 21314,
+          "modelMs": 15793,
+          "loadMs": 5458,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 3,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "review",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "monthly-cancel",
+      "mode": "workflow",
+      "outcome": "review",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": false,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 33819,
+      "stepMs": {
+        "understand": 7431,
+        "is-outage": 0,
+        "find": 542,
+        "draft": 6159,
+        "check": 19674,
+        "supported": 1,
+        "review": 2
+      },
+      "reply": "Hi Tom,\n\nUnfortunately, the Fernhill Cloud Refund Policy [Source 1] states that we do not refund the current month when a monthly plan is cancelled. However, you'll keep full access until the end of the billing period.\n\nIf you have any further questions or concerns, I'd be happy to check with our team for more information. We can also try to assist you with cancelling your account. Please let me know how I can help you next.\n\nBest regards,\n[Your Name]\nFernhill Cloud Support",
+      "gradeReason": "The reply mentions that the current month is not refunded, aligning with the rubric.",
+      "check": {
+        "supported": false,
+        "reason": "The reply contains a factual claim (not refunding the current month) that is supported by the sources, but it also includes an unsupported claim (keeping full access until the end of the billing period for monthly plans, which is not mentioned in the sources).",
+        "unsupportedClaims": [
+          "Keeping full access until the end of the billing period for monthly plans"
+        ]
+      },
+      "understand": {
+        "intent": "billing",
+        "plan": "starter",
+        "urgency": "low",
+        "question": "Will I receive a refund for this month if I cancel the monthly Starter plan today?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 7431,
+          "modelMs": 2359,
+          "loadMs": 5034,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 542,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 6159,
+          "modelMs": 6154,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 19674,
+          "modelMs": 14888,
+          "loadMs": 4692,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "review",
+          "durationMs": 2,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "refund-speed",
+      "mode": "workflow",
+      "outcome": "review",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 35298,
+      "stepMs": {
+        "understand": 5449,
+        "is-outage": 0,
+        "find": 548,
+        "draft": 7624,
+        "check": 21670,
+        "supported": 0,
+        "review": 1
+      },
+      "reply": "Dear [Customer],\n\nThank you for reaching out to us about your refund. According to our refund policy [Source 1], annual plans can be refunded in full within 30 days of purchase. Refunds are processed back to the original payment method within 5 to 10 business days.\n\nPlease note that refunds for add-on storage packs, domain registrations, and purchases made with promotional credit are not available. [Source 2]\n\nIf you have any further questions or concerns about your refund, I'll be happy to help. I'll also check with our team to see if there's any additional information we can provide.\n\nBest regards,\n[Your Name]\nFernhill Cloud Support Agent",
+      "gradeReason": "Says every required fact.",
+      "check": {
+        "supported": false,
+        "reason": "The reply includes a factual claim about annual plans that is not fully supported by the sources, as it does not mention the 15% early-cancellation fee after 30 days.",
+        "unsupportedClaims": [
+          "Annual plans can be refunded in full within 30 days of purchase. After 30 days, we refund the unused months minus a 15% early-cancellation fee."
+        ]
+      },
+      "understand": {
+        "intent": "refund",
+        "plan": "starter",
+        "urgency": "low",
+        "question": "We are expecting a refund to be processed on our card within how many days of the approval?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 5449,
+          "modelMs": 2405,
+          "loadMs": 2992,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 548,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 7624,
+          "modelMs": 7623,
+          "loadMs": 1,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 21670,
+          "modelMs": 16553,
+          "loadMs": 5063,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "review",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "uptime-credit",
+      "mode": "workflow",
+      "outcome": "review",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": false,
+      "caught": true,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 34201,
+      "stepMs": {
+        "understand": 6301,
+        "is-outage": 0,
+        "find": 538,
+        "draft": 8532,
+        "check": 18819,
+        "supported": 1,
+        "review": 0
+      },
+      "reply": "Dear [Customer],\n\nThank you for reaching out to us about the uptime of Fernhill Cloud last month. We'll check with our team to determine the service credit you're eligible for.\n\nOur Refund Policy states that if monthly uptime falls below 99.5%, you can claim a service credit worth 10% of that month's fee. Since your uptime was 98.7%, which is 0.8% below the threshold, the credit would be 10% of the monthly fee.\n\nHowever, I'll need to verify this with our team to confirm the exact amount. I'll check with them and get back to you as soon as possible.\n\nThank you for your patience, and I'll be in touch soon.\n\nBest regards,\n[Your Name]\nFernhill Cloud Support",
+      "gradeReason": "Missing: 25%|25 percent",
+      "check": {
+        "supported": false,
+        "reason": "The reply does not mention the 14-day deadline for claiming service credits, which is not covered in the sources.",
+        "unsupportedClaims": [
+          "Claims must be made within 14 days of the end of the affected month"
+        ]
+      },
+      "understand": {
+        "intent": "billing",
+        "plan": "starter",
+        "urgency": "low",
+        "question": "What service credit can be claimed for a 1.3% uptime shortfall in the Fernhill Cloud service last month?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 6301,
+          "modelMs": 2712,
+          "loadMs": 3568,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 538,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 8532,
+          "modelMs": 8528,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 18819,
+          "modelMs": 13205,
+          "loadMs": 5556,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "review",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "export-time",
+      "mode": "workflow",
+      "outcome": "review",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 28517,
+      "stepMs": {
+        "understand": 5705,
+        "is-outage": 0,
+        "find": 551,
+        "draft": 5877,
+        "check": 16373,
+        "supported": 1,
+        "review": 0
+      },
+      "reply": "Hi there,\n\nThank you for reaching out to Fernhill Cloud about your audit request. Unfortunately, the support handbook doesn't provide a specific timeline for data export, but it does state that exports are ready within 24 hours.\n\nTo confirm, I'll check with our team to see if they can provide any additional information on the data export process. I'll get back to you as soon as possible.\n\nBest regards,\n[Your Name]\nFernhill Cloud Support",
+      "gradeReason": "Says every required fact.",
+      "check": {
+        "supported": false,
+        "reason": "The reply contains a factual claim (exports are ready within 24 hours) that is not supported by the sources.",
+        "unsupportedClaims": [
+          "exports are ready within 24 hours"
+        ]
+      },
+      "understand": {
+        "intent": "account",
+        "plan": "business",
+        "urgency": "normal",
+        "question": "We need a full export of our account data for an audit, please let us know how long it will take to be ready"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 5705,
+          "modelMs": 2656,
+          "loadMs": 3014,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 551,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 5877,
+          "modelMs": 5875,
+          "loadMs": 1,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 16373,
+          "modelMs": 11296,
+          "loadMs": 5044,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "review",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "team-price",
+      "mode": "workflow",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 29091,
+      "stepMs": {
+        "understand": 7184,
+        "is-outage": 0,
+        "find": 543,
+        "draft": 6055,
+        "check": 15298,
+        "supported": 1,
+        "ready": 0
+      },
+      "reply": "Subject: Re: Team plan price\n\nDear [Customer],\n\nThank you for your question about the cost per user for the Team plan. According to our pricing page, the Team plan costs £12 per user per month, which includes 1 TB of storage per team.\n\nIf you have any further questions or need clarification, I'll be happy to check with our team. However, based on the information provided, the answer is £12 per user per month.\n\nBest regards,\n[Your Name]\nSupport Agent\nFernhill Cloud",
+      "gradeReason": "Says every required fact.",
+      "check": {
+        "supported": true,
+        "reason": "The reply correctly states the price for the Team plan, which is supported by the sources.",
+        "unsupportedClaims": []
+      },
+      "understand": {
+        "intent": "billing",
+        "plan": "team",
+        "urgency": "normal",
+        "question": "What is the cost per user for the Team plan?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 7184,
+          "modelMs": 2136,
+          "loadMs": 5020,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 543,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 6055,
+          "modelMs": 6050,
+          "loadMs": 1,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 15298,
+          "modelMs": 10010,
+          "loadMs": 5220,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "ready",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "charity-discount",
+      "mode": "workflow",
+      "outcome": "review",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": false,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 31691,
+      "stepMs": {
+        "understand": 5413,
+        "is-outage": 1,
+        "find": 550,
+        "draft": 5390,
+        "check": 20318,
+        "supported": 1,
+        "review": 0
+      },
+      "reply": "Hi there,\n\nThank you for reaching out to us about potential discounts for your charity. I checked the pricing page for Fernhill Cloud [Source 1], and it looks like registered charities are eligible for 30% off the Team and Business plans. To apply, please visit the Billing page with your charity registration number.\n\nPlease let me know if you have any further questions or concerns.\n\nBest regards,\n[Your Name]",
+      "gradeReason": "Says every required fact.",
+      "check": {
+        "supported": false,
+        "reason": "The reply does not mention the 14-day free trial, which is a factual claim not supported by the sources.",
+        "unsupportedClaims": [
+          "Every plan starts with a 14-day free trial. No payment card is needed to start the trial."
+        ]
+      },
+      "understand": {
+        "intent": "other",
+        "plan": "unknown",
+        "urgency": "low",
+        "question": "Is there any discount available for a registered charity?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 5413,
+          "modelMs": 2098,
+          "loadMs": 3288,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 550,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 5390,
+          "modelMs": 5388,
+          "loadMs": 1,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 20318,
+          "modelMs": 14817,
+          "loadMs": 5295,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "review",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "sso-team",
+      "mode": "workflow",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": false,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 31049,
+      "stepMs": {
+        "understand": 5513,
+        "is-outage": 0,
+        "find": 807,
+        "draft": 6940,
+        "check": 17767,
+        "supported": 1,
+        "ready": 0
+      },
+      "reply": "Hi there,\n\nThank you for reaching out to Fernhill Cloud support. Based on our documentation, it appears that single sign-on with Okta is only available on our Business plan. Unfortunately, this means that we cannot enable single sign-on with Okta on your Team plan at this time.\n\nIf you're interested in exploring other security features, I can suggest checking out our documentation on two-factor authentication, which is available on both the Team and Business plans.\n\nPlease let me know if you have any other questions or if there's anything else I can help you with.\n\nBest regards,\n[Fernhill Cloud Support]",
+      "gradeReason": "The reply correctly states that single sign-on with Okta is not available on the Team plan.",
+      "check": {
+        "supported": true,
+        "reason": "The reply contains a factual claim about single sign-on with Okta being available only on the Business plan, which is supported by the sources.",
+        "unsupportedClaims": []
+      },
+      "understand": {
+        "intent": "how_to",
+        "plan": "team",
+        "urgency": "normal",
+        "question": "Can you enable single sign-on with Okta on our Team plan?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 5513,
+          "modelMs": 2287,
+          "loadMs": 3165,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 807,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 6940,
+          "modelMs": 6927,
+          "loadMs": 4,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 17767,
+          "modelMs": 10544,
+          "loadMs": 7145,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "ready",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "region-change",
+      "mode": "workflow",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": false,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 29537,
+      "stepMs": {
+        "understand": 5478,
+        "is-outage": 0,
+        "find": 543,
+        "draft": 6352,
+        "check": 17139,
+        "supported": 1,
+        "ready": 0
+      },
+      "reply": "Dear Customer,\n\nThank you for reaching out to us about moving your data region. According to our documentation, when a team is created, the admin chooses whether its files are stored in the EU (Frankfurt) or the US (Virginia). Unfortunately, the region cannot be changed later, as stated in [Source 1: fernhill-account-security.md].\n\nI'll check with our team to see if there's any other solution that can meet your needs. I'll get back to you as soon as possible.\n\nBest regards,\n[Your Name]",
+      "gradeReason": "The reply does not address the possibility of moving files between regions, only that the region cannot be changed after creation.",
+      "check": {
+        "supported": true,
+        "reason": "The reply does not contain any unsupported claims.",
+        "unsupportedClaims": []
+      },
+      "understand": {
+        "intent": "other",
+        "plan": "unknown",
+        "urgency": "low",
+        "question": "Can you move all our files to the US region now?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 5478,
+          "modelMs": 2174,
+          "loadMs": 3270,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 543,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 6352,
+          "modelMs": 6342,
+          "loadMs": 1,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 17139,
+          "modelMs": 10881,
+          "loadMs": 6159,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "ready",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "web-upload-limit",
+      "mode": "workflow",
+      "outcome": "review",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": false,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 34230,
+      "stepMs": {
+        "understand": 5993,
+        "is-outage": 0,
+        "find": 824,
+        "draft": 9063,
+        "check": 18337,
+        "supported": 1,
+        "review": 0
+      },
+      "reply": "Subject: Re: Upload keeps failing\n\nDear [Customer],\n\nThank you for reaching out to us about the upload issue. According to our documentation, [Source 1: fernhill-support-handbook.md], there is a file size limit for uploading videos through the website. The limit is up to 5 GB.\n\nHowever, we also have a different limit when using the desktop app. According to [Source 2: fernhill-sync-and-storage.md], a single file can be up to 50 GB when uploaded with the desktop app.\n\nIf you're experiencing issues uploading a 7 GB video, we recommend trying the upload through the desktop app instead. If you're still having trouble, I'd be happy to check with our team to see if there's anything else we can assist you with.\n\nBest regards,\n[Your Name]\nFernhill Cloud Support",
+      "gradeReason": "Says every required fact.",
+      "check": {
+        "supported": false,
+        "reason": "The reply contains a factual claim about the file size limit through the web that is not supported by the provided sources.",
+        "unsupportedClaims": [
+          "A single file can be up to 5 GB when uploaded with the web."
+        ]
+      },
+      "understand": {
+        "intent": "other",
+        "plan": "unknown",
+        "urgency": "low",
+        "question": "Is there a file size limit for uploading videos through the website?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 5993,
+          "modelMs": 2254,
+          "loadMs": 3669,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 824,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 9063,
+          "modelMs": 9054,
+          "loadMs": 5,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 18337,
+          "modelMs": 12600,
+          "loadMs": 5669,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "review",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "version-history",
+      "mode": "workflow",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 29323,
+      "stepMs": {
+        "understand": 5897,
+        "is-outage": 0,
+        "find": 818,
+        "draft": 6335,
+        "check": 16257,
+        "supported": 1,
+        "ready": 0
+      },
+      "reply": "Dear [Customer],\n\nI'm happy to help you with your question about restoring older versions of files on the Team plan.\n\nAccording to our documentation, [Source 1: fernhill-sync-and-storage.md] states that we keep earlier versions of every file for 180 days on the Team plan. You can restore a version from the file's History panel in the Team plan.\n\nIf you're unable to find the information you're looking for, I'll check with the team to provide more detailed assistance.",
+      "gradeReason": "Says every required fact.",
+      "check": {
+        "supported": true,
+        "reason": "The reply does not contain any unsupported claims.",
+        "unsupportedClaims": []
+      },
+      "understand": {
+        "intent": "how_to",
+        "plan": "team",
+        "urgency": "normal",
+        "question": "I want to know how far back I can restore an older version of a file on the Team plan"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 5897,
+          "modelMs": 2531,
+          "loadMs": 3322,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 818,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 6335,
+          "modelMs": 6327,
+          "loadMs": 3,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 16257,
+          "modelMs": 10589,
+          "loadMs": 5580,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "ready",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "passcode-wrong",
+      "mode": "workflow",
+      "outcome": "review",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": false,
+      "caught": true,
+      "intentCorrect": false,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 32169,
+      "stepMs": {
+        "understand": 5507,
+        "is-outage": 0,
+        "find": 810,
+        "draft": 5196,
+        "check": 20626,
+        "supported": 2,
+        "review": 0
+      },
+      "reply": "Dear [Customer],\n\nUnfortunately, the sources provided do not mention a specific process for recovering access to the Fernhill app after entering an incorrect passcode multiple times. \n\nI'll check with the team to see if they have any additional guidance on this issue. I appreciate your patience and understanding.\n\nBest regards,\n[Your Name]\nFernhill Cloud Support",
+      "gradeReason": "Does not meet the rubric as it does not specify the number of wrong attempts before signing out.",
+      "check": {
+        "supported": false,
+        "reason": "The sources do not provide information on the process for recovering access to the Fernhill app after entering an incorrect passcode multiple times.",
+        "unsupportedClaims": [
+          "The sources do not mention a specific process for recovering access to the Fernhill app after entering an incorrect passcode multiple times."
+        ]
+      },
+      "understand": {
+        "intent": "how_to",
+        "plan": "starter",
+        "urgency": "low",
+        "question": "How can I recover access to the Fernhill app after entering an incorrect passcode multiple times?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 5507,
+          "modelMs": 2462,
+          "loadMs": 3019,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 810,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 5196,
+          "modelMs": 5188,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 20626,
+          "modelMs": 14859,
+          "loadMs": 5666,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 2,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "review",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "student-discount",
+      "mode": "workflow",
+      "outcome": "ready",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": false,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 30297,
+      "stepMs": {
+        "understand": 6003,
+        "is-outage": 0,
+        "find": 809,
+        "draft": 5375,
+        "check": 18098,
+        "supported": 0,
+        "ready": 0
+      },
+      "reply": "Hi there!\n\nUnfortunately, Fernhill Cloud does not explicitly offer a student discount. The pricing page doesn't mention any special discounts for students. However, I'll check with our team to see if there's any possibility of a discounted plan for students. I'll get back to you as soon as I can.\n\nBest regards,\n[Your Name]\nFernhill Cloud Support",
+      "gradeReason": "The reply states that the company does not offer a student discount and mentions checking with the team, which aligns with the rubric.",
+      "check": {
+        "supported": true,
+        "reason": "The reply does not contain any factual claims that are not supported by the sources, and it does not make any claims about pricing or policies that are not explicitly stated or implied in the sources.",
+        "unsupportedClaims": []
+      },
+      "understand": {
+        "intent": "how_to",
+        "plan": "unknown",
+        "urgency": "low",
+        "question": "Does Fernhill Cloud offer a student discount?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 6003,
+          "modelMs": 2109,
+          "loadMs": 3863,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 809,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 5375,
+          "modelMs": 5367,
+          "loadMs": 3,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 18098,
+          "modelMs": 12440,
+          "loadMs": 5552,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "ready",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "slack-integration",
+      "mode": "workflow",
+      "outcome": "ready",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 32374,
+      "stepMs": {
+        "understand": 5643,
+        "is-outage": 0,
+        "find": 811,
+        "draft": 6542,
+        "check": 19369,
+        "supported": 1,
+        "ready": 0
+      },
+      "reply": "Dear [Customer],\n\nThank you for reaching out to us about integrating Fernhill with Slack for notifications in your channels. Unfortunately, we couldn't find any information on this topic in our documentation. I'll check with our team to see if we have any plans to support this integration in the future.\n\nWould you like me to follow up with you once I've checked with our team? I'll make sure to let you know if there's any update on this feature.\n\nBest regards,\n[Fernhill Support]",
+      "gradeReason": "The reply indicates that the information couldn't be found and mentions checking with the team, which aligns with the rubric.",
+      "check": {
+        "supported": true,
+        "reason": "The reply does not contain any unsupported factual claims and is within the scope of the sources provided, as it mentions the lack of information on the topic, which is consistent with the sources.",
+        "unsupportedClaims": []
+      },
+      "understand": {
+        "intent": "how_to",
+        "plan": "team",
+        "urgency": "low",
+        "question": "Does Fernhill integrate with Slack to send notifications to our channels?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 5643,
+          "modelMs": 2281,
+          "loadMs": 3296,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 811,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 6542,
+          "modelMs": 6539,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 19369,
+          "modelMs": 13000,
+          "loadMs": 6297,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "ready",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "hipaa",
+      "mode": "workflow",
+      "outcome": "ready",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": false,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 27770,
+      "stepMs": {
+        "understand": 5773,
+        "is-outage": 0,
+        "find": 810,
+        "draft": 4916,
+        "check": 16260,
+        "supported": 0,
+        "ready": 0
+      },
+      "reply": "Dear [Customer],\n\nThank you for reaching out to Fernhill Cloud. Unfortunately, our documentation does not provide a direct answer to your question about HIPAA compliance. We'll check with our team to provide more information on this topic.\n\n[Will check with the team]\n\nBest regards,\nFernhill Cloud Support",
+      "gradeReason": "The reply indicates that the team will check for the information, which aligns with the rubric.",
+      "check": {
+        "supported": true,
+        "reason": "The reply does not contain any factual claims that are unsupported by the sources.",
+        "unsupportedClaims": []
+      },
+      "understand": {
+        "intent": "other",
+        "plan": "unknown",
+        "urgency": "low",
+        "question": "What is Fernhill Cloud's compliance status regarding HIPAA regulations for healthcare organizations?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 5773,
+          "modelMs": 2383,
+          "loadMs": 3358,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 810,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 4916,
+          "modelMs": 4908,
+          "loadMs": 4,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 16260,
+          "modelMs": 10338,
+          "loadMs": 5860,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "ready",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "office-address",
+      "mode": "workflow",
+      "outcome": "ready",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": true,
+      "caught": false,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 30697,
+      "stepMs": {
+        "understand": 6088,
+        "is-outage": 0,
+        "find": 548,
+        "draft": 5912,
+        "check": 18142,
+        "supported": 1,
+        "ready": 0
+      },
+      "reply": "Subject: Re: Office address\n\nDear [Customer],\n\nUnfortunately, we don't have a physical office address, and we're a cloud-based service. We're always happy to help you with any questions or concerns you may have via email or live chat. If you have a question about our service, feel free to ask, and I'll do my best to assist you.\n\nBest regards,\n[Fernhill Support]",
+      "gradeReason": "The reply does not provide the requested address and instead informs the customer about being a cloud-based service.",
+      "check": {
+        "supported": true,
+        "reason": "The reply does not contain any factual claims that are not supported by the sources.",
+        "unsupportedClaims": []
+      },
+      "understand": {
+        "intent": "other",
+        "plan": "unknown",
+        "urgency": "low",
+        "question": "The customer is asking for the office address of Fernhill Cloud."
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 6088,
+          "modelMs": 2278,
+          "loadMs": 3768,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 548,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 5912,
+          "modelMs": 5906,
+          "loadMs": 3,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 18142,
+          "modelMs": 10852,
+          "loadMs": 7203,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "ready",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "outage-login",
+      "mode": "workflow",
+      "outcome": "escalated",
+      "expectedRoute": "escalated",
+      "escalationCorrect": true,
+      "replyCorrect": null,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 6802,
+      "stepMs": {
+        "understand": 6801,
+        "is-outage": 0,
+        "escalate": 0
+      },
+      "reply": null,
+      "gradeReason": "",
+      "check": null,
+      "understand": {
+        "intent": "outage",
+        "plan": "business",
+        "urgency": "high",
+        "question": "What is the cause of the outage and when can we expect the service to be restored?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 6801,
+          "modelMs": 2862,
+          "loadMs": 3909,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "escalate",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "outage-sync",
+      "mode": "workflow",
+      "outcome": "escalated",
+      "expectedRoute": "escalated",
+      "escalationCorrect": true,
+      "replyCorrect": null,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 3102,
+      "stepMs": {
+        "understand": 3102,
+        "is-outage": 0,
+        "escalate": 0
+      },
+      "reply": null,
+      "gradeReason": "",
+      "check": null,
+      "understand": {
+        "intent": "outage",
+        "plan": "team",
+        "urgency": "high",
+        "question": "Are you experiencing a complete loss of file syncing functionality for your entire team, and if so, is Fernhill Cloud currently down or experiencing technical difficulties?"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 3102,
+          "modelMs": 3091,
+          "loadMs": 6,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "escalate",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "double-charge",
+      "mode": "workflow",
+      "outcome": "review",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": false,
+      "caught": true,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 36843,
+      "stepMs": {
+        "understand": 2577,
+        "is-outage": 0,
+        "find": 1080,
+        "draft": 8724,
+        "check": 24394,
+        "supported": 3,
+        "review": 4
+      },
+      "reply": "Hi there,\n\nSorry to hear that you were charged twice this month. According to our Refund Policy, we refund annual plans in full within 30 days of purchase, minus a 15% early-cancellation fee. Since you're asking for the extra charge to be refunded immediately, I'll check with the team to see if we can assist you further.\n\nCan you please let me know what specific amount you'd like to have refunded? Additionally, which plan do you have (Team or Starter) and how long have you had it?\n\nI'll investigate this for you and get back to you as soon as possible.\n\nBest regards,\n[Your Name]\nSupport Agent\nFernhill Cloud",
+      "gradeReason": "The reply provides a refund policy and a timeline, which are not aligned with the rubric criteria.",
+      "check": {
+        "supported": false,
+        "reason": "The reply contains a factual claim about the refund policy that is not fully supported by the sources, specifically the 15% early-cancellation fee for annual plans.",
+        "unsupportedClaims": [
+          "Annual plans can be refunded in full within 30 days of purchase, minus a 15% early-cancellation fee."
+        ]
+      },
+      "understand": {
+        "intent": "billing",
+        "plan": "starter",
+        "urgency": "low",
+        "question": "I was charged twice this month and I would like to have the extra charge refunded immediately."
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 2577,
+          "modelMs": 2570,
+          "loadMs": 4,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 1080,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 8724,
+          "modelMs": 8712,
+          "loadMs": 3,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 24394,
+          "modelMs": 17014,
+          "loadMs": 6758,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 3,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "review",
+          "durationMs": 4,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "vague",
+      "mode": "workflow",
+      "outcome": "ready",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": true,
+      "jsonFirstTry": true,
+      "jsonAttempts": 1,
+      "durationMs": 45566,
+      "stepMs": {
+        "understand": 6652,
+        "is-outage": 1,
+        "find": 1090,
+        "draft": 13101,
+        "check": 24707,
+        "supported": 1,
+        "ready": 0
+      },
+      "reply": "Hi there,\n\nThank you for reaching out to us for help with your Fernhill Cloud service. I'd be happy to assist you.\n\nTo help me better understand the issue, could you please provide more details about the problem you're experiencing? What kind of error message are you seeing, or what exactly isn't working as expected?\n\nIf you're experiencing any issues with your desktop app, file size, or camera upload, please refer to our sync and storage guide [Source 2] to see if it provides any helpful information.\n\nIf you're having trouble with the mobile app, please check our mobile apps page [Source 3] to see if your device is compatible.\n\nAdditionally, if you're concerned about your account security, you can check our account security page [Source 4] for information on two-factor authentication and single sign-on.\n\nI'll do my best to help you troubleshoot the issue. If you need further assistance, I'll check with the team to provide a more specific solution.\n\nLooking forward to helping you!\n\nBest regards,\n[Your Name]",
+      "gradeReason": "The reply asks for more details about the problem and offers to check with the team for a specific solution if needed.",
+      "check": {
+        "supported": true,
+        "reason": "The reply does not contain any unsupported factual claims and is primarily a greeting and request for more information.",
+        "unsupportedClaims": []
+      },
+      "understand": {
+        "intent": "other",
+        "plan": "unknown",
+        "urgency": "low",
+        "question": "I am having trouble with my Fernhill Cloud service and I need help"
+      },
+      "steps": [
+        {
+          "nodeId": "understand",
+          "durationMs": 6652,
+          "modelMs": 2797,
+          "loadMs": 3681,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "is-outage",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "find",
+          "durationMs": 1090,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "draft",
+          "durationMs": 13101,
+          "modelMs": 13078,
+          "loadMs": 8,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "check",
+          "durationMs": 24707,
+          "modelMs": 14261,
+          "loadMs": 10274,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "supported",
+          "durationMs": 1,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "ready",
+          "durationMs": 0,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    }
+  ],
+  "regradedAt": "2026-10-28T22:39:25.939Z"
+}

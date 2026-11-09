@@ -1,0 +1,877 @@
+{
+  "name": "single",
+  "mode": "single",
+  "createdAt": "2026-10-28T22:06:40.604Z",
+  "settings": {
+    "answerModel": "llama3.2:3b",
+    "checkModel": null,
+    "useFormat": null,
+    "graderModel": "qwen2.5:7b-instruct"
+  },
+  "environment": {
+    "ollamaVersion": "0.40.9"
+  },
+  "summary": {
+    "emails": 20,
+    "sentWrong": 7,
+    "sentRight": 11,
+    "caught": 0,
+    "ready": 20,
+    "review": 0,
+    "escalated": 0,
+    "failed": 0,
+    "escalationCorrect": 18,
+    "reviewedButCorrect": 0,
+    "intentAccuracy": null,
+    "jsonFirstTry": null,
+    "jsonAfterRetry": null,
+    "medianSeconds": 3.45,
+    "stepMedians": {
+      "find": 0.04,
+      "answer": 3.4
+    }
+  },
+  "results": [
+    {
+      "emailId": "refund-two-months",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": true,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 8255,
+      "stepMs": {
+        "find": 1527,
+        "answer": 6717
+      },
+      "reply": "Since your annual Team plan purchase was two months ago, you are within the 30-day refund window. According to the refund policy, you can request a full refund.",
+      "gradeReason": "The reply promises a full refund instead of a partial refund as per the rubric.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 1527,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 6717,
+          "modelMs": 3727,
+          "loadMs": 2977,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "monthly-cancel",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 4517,
+      "stepMs": {
+        "find": 809,
+        "answer": 3707
+      },
+      "reply": "According to the Fernhill Cloud Refund Policy, if you cancel a monthly plan (Starter plan in this case), you will not get this month refunded. You will still have full access until the end of the billing period.",
+      "gradeReason": "The reply correctly states that the current month is not refunded.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 809,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 3707,
+          "modelMs": 3699,
+          "loadMs": 3,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "refund-speed",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 3404,
+      "stepMs": {
+        "find": 43,
+        "answer": 3360
+      },
+      "reply": "According to the refund policy, a refund for an annual plan is processed within 5 to 10 business days after approval. However, the exact refund date is not specified.",
+      "gradeReason": "Says every required fact.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 43,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 3360,
+          "modelMs": 3356,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "uptime-credit",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": true,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 4267,
+      "stepMs": {
+        "find": 48,
+        "answer": 4219
+      },
+      "reply": "To calculate the service credit, first, determine if the 98.7% uptime falls below 99.5% and 99%. \n\nSince 98.7% is less than 99.5%, you can claim a service credit worth 10% of the fee.",
+      "gradeReason": "Missing: 25%|25 percent",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 48,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 4219,
+          "modelMs": 4215,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "export-time",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 2555,
+      "stepMs": {
+        "find": 37,
+        "answer": 2518
+      },
+      "reply": "According to the context provided, exports of account data are ready within 24 hours.",
+      "gradeReason": "Says every required fact.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 37,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 2518,
+          "modelMs": 2514,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "team-price",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 2641,
+      "stepMs": {
+        "find": 34,
+        "answer": 2607
+      },
+      "reply": "According to Source 1: fernhill-pricing.md, the Team plan costs £12 per user per month.",
+      "gradeReason": "Says every required fact.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 34,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 2607,
+          "modelMs": 2605,
+          "loadMs": 1,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "charity-discount",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 2726,
+      "stepMs": {
+        "find": 25,
+        "answer": 2701
+      },
+      "reply": "According to Source 1 and Source 3, as a registered charity, you are eligible for 30% off the Team and Business plans.",
+      "gradeReason": "Says every required fact.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 25,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 2701,
+          "modelMs": 2694,
+          "loadMs": 3,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "sso-team",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 3750,
+      "stepMs": {
+        "find": 67,
+        "answer": 3683
+      },
+      "reply": "No, you cannot turn on single sign-on with Okta on your Team plan. According to Source 2: fernhill-account-security.md, Single sign-on with Google Workspace, Microsoft Entra ID, or Okta is available on the Business plan only.",
+      "gradeReason": "The reply correctly states that single sign-on with Okta is not available on the Team plan.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 67,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 3683,
+          "modelMs": 3664,
+          "loadMs": 12,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "region-change",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 3311,
+      "stepMs": {
+        "find": 27,
+        "answer": 3283
+      },
+      "reply": "Based on the provided context, it's not possible to move all your files to the US region as the region cannot be changed later. The admin initially chose the EU region when the team was created.",
+      "gradeReason": "The reply correctly states that the region cannot be changed after the team is created, aligning with the rubric.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 27,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 3283,
+          "modelMs": 3278,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "web-upload-limit",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": true,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 4369,
+      "stepMs": {
+        "find": 50,
+        "answer": 4317
+      },
+      "reply": "The storage limit for the Starter plan is 100 GB per team, while the Team plan has a limit of 1 TB, and the Business plan has a limit of 5 TB. The current limit of 7 GB is below the limit for all plans, so the issue is likely not related to the storage limit itself.",
+      "gradeReason": "Missing: 5 GB|5GB",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 50,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 4317,
+          "modelMs": 4311,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "version-history",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 3175,
+      "stepMs": {
+        "find": 58,
+        "answer": 3117
+      },
+      "reply": "You can restore an older version of a file for 30 days on the Starter plan, and up to 180 days on the Team plan.",
+      "gradeReason": "Says every required fact.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 58,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 3117,
+          "modelMs": 3111,
+          "loadMs": 4,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "passcode-wrong",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "ready",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": true,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 3493,
+      "stepMs": {
+        "find": 55,
+        "answer": 3438
+      },
+      "reply": "Since your son typed the wrong passcode into the Fernhill app multiple times, the app has now signed out and removed offline files from the device, as per the passcode lock settings.",
+      "gradeReason": "The reply mentions signing out but does not specify the exact number of wrong attempts.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 55,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 3438,
+          "modelMs": 3434,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "student-discount",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": true,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 3384,
+      "stepMs": {
+        "find": 32,
+        "answer": 3352
+      },
+      "reply": "Based on the provided context, it appears that Fernhill offers a 30% discount on the Team and Business plans for registered charities. However, there is no explicit mention of a student discount.",
+      "gradeReason": "The reply provides a related fact not mentioned in the documents and does not directly address the question.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 32,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 3352,
+          "modelMs": 3343,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "slack-integration",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": true,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 2607,
+      "stepMs": {
+        "find": 26,
+        "answer": 2581
+      },
+      "reply": "No, Fernhill does not integrate with Slack according to the provided context.",
+      "gradeReason": "The reply directly answers the question with a clear 'no', which is not supported by the rubric.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 26,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 2581,
+          "modelMs": 2576,
+          "loadMs": 1,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "hipaa",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 4755,
+      "stepMs": {
+        "find": 28,
+        "answer": 4725
+      },
+      "reply": "Based on the provided context, I couldn't find any information on HIPAA compliance specifically for Fernhill Cloud. However, Fernhill Cloud does provide some security features such as two-factor authentication, single sign-on, and file size limits. To confirm HIPAA compliance, it would be best to contact Fernhill Cloud's support team or consult with a compliance expert.",
+      "gradeReason": "The reply states it couldn't find the answer and suggests contacting the support team, which aligns with the rubric.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 28,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 4725,
+          "modelMs": 4721,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "office-address",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 2638,
+      "stepMs": {
+        "find": 39,
+        "answer": 2599
+      },
+      "reply": "Unfortunately, I couldn't find any office address mentioned in the provided context.",
+      "gradeReason": "The reply states that the address cannot be found, which aligns with the rubric.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 39,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 2599,
+          "modelMs": 2595,
+          "loadMs": 3,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "outage-login",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "escalated",
+      "escalationCorrect": false,
+      "replyCorrect": null,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 3963,
+      "stepMs": {
+        "find": 36,
+        "answer": 3927
+      },
+      "reply": "Since the account's login and sync feature are down and it's Severity 1, I will escalate the issue.\n\nSince it's a Severity 1 issue and no response has been given within 30 minutes, I will paged the on-call engineer immediately.",
+      "gradeReason": "",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 36,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 3927,
+          "modelMs": 3918,
+          "loadMs": 3,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "outage-sync",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "escalated",
+      "escalationCorrect": false,
+      "replyCorrect": null,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 4603,
+      "stepMs": {
+        "find": 38,
+        "answer": 4565
+      },
+      "reply": "There is no indication that Fernhill is down. According to the provided context, Fernhill Cloud is a fictional file-sync service, and its status is not explicitly mentioned in the provided sources. However, the support hours are mentioned in Source 2, which may be relevant if the issue is related to availability of support.",
+      "gradeReason": "",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 38,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 4565,
+          "modelMs": 4561,
+          "loadMs": 2,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "double-charge",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": false,
+      "sentWrong": true,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 5002,
+      "stepMs": {
+        "find": 39,
+        "answer": 4963
+      },
+      "reply": "The refund policy states that annual plans can be refunded in full within 30 days of purchase, with a 15% early-cancellation fee for refunds made after 30 days. You should respond to the customer, explaining the refund policy and the fees involved, and request that they provide an email with their account email and invoice number or use the Request refund button on the Billing page.",
+      "gradeReason": "The reply provides a refund policy and instructions for requesting a refund, rather than addressing the immediate issue of the double charge.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 39,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 4963,
+          "modelMs": 4951,
+          "loadMs": 6,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    },
+    {
+      "emailId": "vague",
+      "mode": "single",
+      "outcome": "ready",
+      "expectedRoute": "review",
+      "escalationCorrect": true,
+      "replyCorrect": true,
+      "sentWrong": false,
+      "caught": false,
+      "intentCorrect": null,
+      "jsonFirstTry": null,
+      "jsonAttempts": null,
+      "durationMs": 3413,
+      "stepMs": {
+        "find": 52,
+        "answer": 3361
+      },
+      "reply": "It seems like you're having trouble with Fernhill Cloud. Can you provide more details about the issue you're experiencing, such as the specific error message or what's not working?",
+      "gradeReason": "The reply asks for more details about the problem, which aligns with the rubric.",
+      "check": null,
+      "understand": null,
+      "steps": [
+        {
+          "nodeId": "find",
+          "durationMs": 52,
+          "modelMs": 0,
+          "loadMs": 0,
+          "attempts": 0,
+          "status": "ok",
+          "error": null
+        },
+        {
+          "nodeId": "answer",
+          "durationMs": 3361,
+          "modelMs": 3356,
+          "loadMs": 4,
+          "attempts": 1,
+          "status": "ok",
+          "error": null
+        }
+      ]
+    }
+  ],
+  "regradedAt": "2026-10-28T22:38:17.449Z"
+}
